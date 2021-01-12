@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Node-js Package
+name: Node.js Package
 
 # Controls when the action will run. 
 on:
@@ -20,10 +20,8 @@ jobs:
         with:
           node-version: 12
       - name: Run a npm install and test
-        run: |
-          npm install
-          npm ci
-          npm test
+      - run: npm install
+      - run: npm install-ci-test
   publish-npm:
     runs-on: ubuntu-latest
     steps:
