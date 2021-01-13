@@ -1,4 +1,4 @@
-# SwirepayApi.TerminalResponse
+# SwirepayPaymentApi.TerminalResponse
 
 ## Properties
 

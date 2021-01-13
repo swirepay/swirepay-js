@@ -1,4 +1,4 @@
-# SwirepayApi.PlanResponse
+# SwirepayPaymentApi.PlanResponse
 
 ## Properties
 

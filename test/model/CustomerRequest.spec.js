@@ -1,5 +1,5 @@
 /**
- * Swirepay API
+ * Swirepay Payment API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayApi);
+    factory(root.expect, root.SwirepayPaymentApi);
   }
-}(this, function(expect, SwirepayApi) {
+}(this, function(expect, SwirepayPaymentApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayApi.CustomerRequest();
+    instance = new SwirepayPaymentApi.CustomerRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,25 @@
   describe('CustomerRequest', function() {
     it('should create an instance of CustomerRequest', function() {
       // uncomment below and update the code to test CustomerRequest
-      //var instane = new SwirepayApi.CustomerRequest();
-      //expect(instance).to.be.a(SwirepayApi.CustomerRequest);
+      //var instane = new SwirepayPaymentApi.CustomerRequest();
+      //expect(instance).to.be.a(SwirepayPaymentApi.CustomerRequest);
     });
 
     it('should have the property email (base name: "email")', function() {
       // uncomment below and update the code to test the property email
-      //var instance = new SwirepayApi.CustomerRequest();
+      //var instance = new SwirepayPaymentApi.CustomerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property name (base name: "name")', function() {
       // uncomment below and update the code to test the property name
-      //var instance = new SwirepayApi.CustomerRequest();
+      //var instance = new SwirepayPaymentApi.CustomerRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property phoneNumber (base name: "phoneNumber")', function() {
       // uncomment below and update the code to test the property phoneNumber
-      //var instance = new SwirepayApi.CustomerRequest();
+      //var instance = new SwirepayPaymentApi.CustomerRequest();
       //expect(instance).to.be();
     });
 

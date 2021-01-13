@@ -1,5 +1,5 @@
 {
-  "name": "swirepay_api",
+  "name": "swirepay_payment_api",
   "version": "1.0.0",
   "description": "Swirepay_REST_APIs_are_resource_oriented_URLs_that_accept_JSON_encodedrequest_bodies_return_JSON_encoded_responses_and_use_standard_HTTP_responsecodes_authentication_and_verbs__You_can_use_the_Swirepay_API_in_test_mode_whichdoes_not_affect_your_live_data_or_interact_with_the_banking_networks__The_APIkey_you_use_to_authenticate_the_request_determines_whether_the_request_is_livemode_or_test_mode_",
   "license": "Apache 2.0",

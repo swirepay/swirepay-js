@@ -1,4 +1,4 @@
-# SwirepayApi.CountryResponse
+# SwirepayPaymentApi.CountryResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# SwirepayApi.CountryApi
+# SwirepayPaymentApi.CountryApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
@@ -19,9 +19,9 @@ Get country
 ### Example
 
 ```javascript
-import SwirepayApi from 'swirepay_api';
+import SwirepayPaymentApi from 'swirepay_payment_api';
 
-let apiInstance = new SwirepayApi.CountryApi();
+let apiInstance = new SwirepayPaymentApi.CountryApi();
 let xApiKey = "xApiKey_example"; // String | 
 apiInstance.getCountry(xApiKey, (error, data, response) => {
   if (error) {

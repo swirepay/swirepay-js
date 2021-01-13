@@ -1,4 +1,4 @@
-# SwirepayApi.DisputeResponse
+# SwirepayPaymentApi.DisputeResponse
 
 ## Properties
 

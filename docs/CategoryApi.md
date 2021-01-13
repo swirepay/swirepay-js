@@ -1,4 +1,4 @@
-# SwirepayApi.CategoryApi
+# SwirepayPaymentApi.CategoryApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
@@ -19,9 +19,9 @@ Get category
 ### Example
 
 ```javascript
-import SwirepayApi from 'swirepay_api';
+import SwirepayPaymentApi from 'swirepay_payment_api';
 
-let apiInstance = new SwirepayApi.CategoryApi();
+let apiInstance = new SwirepayPaymentApi.CategoryApi();
 let xApiKey = "xApiKey_example"; // String | 
 apiInstance.getCategory(xApiKey, (error, data, response) => {
   if (error) {

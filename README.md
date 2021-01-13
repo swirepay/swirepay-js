@@ -1,6 +1,6 @@
-# swirepay_api
+# swirepay_payment_api
 
-SwirepayApi - JavaScript client for swirepay_api
+SwirepayPaymentApi - JavaScript client for swirepay_payment_api
 Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded
 request bodies, return JSON-encoded responses, and use standard HTTP response
 codes, authentication, and verbs. You can use the Swirepay API in test mode, which
@@ -24,7 +24,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install swirepay_api --save
+npm install swirepay_payment_api --save
 ```
 
 Finally, you need to build the module:
@@ -47,7 +47,7 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-To use the link you just defined in your project, switch to the directory you want to use your swirepay_api from, and run:
+To use the link you just defined in your project, switch to the directory you want to use your swirepay_payment_api from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
@@ -103,16 +103,16 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var SwirepayApi = require('swirepay_api');
+var SwirepayPaymentApi = require('swirepay_payment_api');
 
-var defaultClient = SwirepayApi.ApiClient.instance;
+var defaultClient = SwirepayPaymentApi.ApiClient.instance;
 // Configure API key authorization: api_key
 var api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = "YOUR API KEY"
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix['x-api-key'] = "Token"
 
-var api = new SwirepayApi.BalanceApi()
+var api = new SwirepayPaymentApi.BalanceApi()
 var xApiKey = "xApiKey_example"; // {String} 
 var callback = function(error, data, response) {
   if (error) {
@@ -131,71 +131,71 @@ All URIs are relative to *https://api.swirepay.com/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*SwirepayApi.BalanceApi* | [**getBalance**](docs/BalanceApi.md#getBalance) | **GET** /balance | Get balance
-*SwirepayApi.CategoryApi* | [**getCategory**](docs/CategoryApi.md#getCategory) | **GET** /category | Get category
-*SwirepayApi.CountryApi* | [**getCountry**](docs/CountryApi.md#getCountry) | **GET** /country | Get country
-*SwirepayApi.CurrencyApi* | [**getCurrency**](docs/CurrencyApi.md#getCurrency) | **GET** /currency | Get currency
-*SwirepayApi.CustomerApi* | [**addCustomer**](docs/CustomerApi.md#addCustomer) | **POST** /customer | Add a customer
-*SwirepayApi.CustomerApi* | [**getCustomer**](docs/CustomerApi.md#getCustomer) | **GET** /customer | Get customers
-*SwirepayApi.DisputeApi* | [**getDispute**](docs/DisputeApi.md#getDispute) | **GET** /dispute | Get dispute
-*SwirepayApi.EventApi* | [**getEvent**](docs/EventApi.md#getEvent) | **GET** /event | Get event
-*SwirepayApi.InvoiceApi* | [**getInvoice**](docs/InvoiceApi.md#getInvoice) | **GET** /invoice | Get invoice
-*SwirepayApi.MembershipApi* | [**getMembership**](docs/MembershipApi.md#getMembership) | **GET** /membership | Get membership
-*SwirepayApi.PaymentApi* | [**getPayment**](docs/PaymentApi.md#getPayment) | **GET** /payment | Get payment
-*SwirepayApi.PaymentButtonApi* | [**getPaymentButton**](docs/PaymentButtonApi.md#getPaymentButton) | **GET** /payment-button | Get payment button
-*SwirepayApi.PaymentLinkApi* | [**getPaymentLink**](docs/PaymentLinkApi.md#getPaymentLink) | **GET** /payment-link | Get payment link
-*SwirepayApi.PaymentMethodApi* | [**addPaymentMethod**](docs/PaymentMethodApi.md#addPaymentMethod) | **POST** /payment-method | Add a payment method
-*SwirepayApi.PaymentMethodApi* | [**getPaymentMethod**](docs/PaymentMethodApi.md#getPaymentMethod) | **GET** /payment-method | Get payment methods
-*SwirepayApi.PaymentSessionApi* | [**getPaymentSession**](docs/PaymentSessionApi.md#getPaymentSession) | **GET** /payment-session | Get payment sessions
-*SwirepayApi.PayoutApi* | [**getPayout**](docs/PayoutApi.md#getPayout) | **GET** /payout | Get payout
-*SwirepayApi.PlanApi* | [**getPlan**](docs/PlanApi.md#getPlan) | **GET** /plan | Get plan
-*SwirepayApi.ProductApi* | [**getProduct**](docs/ProductApi.md#getProduct) | **GET** /product | Get product
-*SwirepayApi.PublicKeyApi* | [**getPublicKey**](docs/PublicKeyApi.md#getPublicKey) | **GET** /public-key | Get public key
-*SwirepayApi.RefundApi* | [**getRefund**](docs/RefundApi.md#getRefund) | **GET** /refund | Get refund
-*SwirepayApi.ReminderApi* | [**getReminder**](docs/ReminderApi.md#getReminder) | **GET** /reminder | Get reminder
-*SwirepayApi.ReportApi* | [**getReport**](docs/ReportApi.md#getReport) | **GET** /report | Get report
-*SwirepayApi.SetupSessionApi* | [**getSetupSession**](docs/SetupSessionApi.md#getSetupSession) | **GET** /setup-session | Get setup session
-*SwirepayApi.SetupSubscriptionApi* | [**getSubscription**](docs/SetupSubscriptionApi.md#getSubscription) | **GET** /subscription | Get subscription
-*SwirepayApi.TerminalApi* | [**getTerminal**](docs/TerminalApi.md#getTerminal) | **GET** /terminal | Get terminal
-*SwirepayApi.TransactionApi* | [**getTransaction**](docs/TransactionApi.md#getTransaction) | **GET** /transaction | Get transaction
+*SwirepayPaymentApi.BalanceApi* | [**getBalance**](docs/BalanceApi.md#getBalance) | **GET** /balance | Get balance
+*SwirepayPaymentApi.CategoryApi* | [**getCategory**](docs/CategoryApi.md#getCategory) | **GET** /category | Get category
+*SwirepayPaymentApi.CountryApi* | [**getCountry**](docs/CountryApi.md#getCountry) | **GET** /country | Get country
+*SwirepayPaymentApi.CurrencyApi* | [**getCurrency**](docs/CurrencyApi.md#getCurrency) | **GET** /currency | Get currency
+*SwirepayPaymentApi.CustomerApi* | [**addCustomer**](docs/CustomerApi.md#addCustomer) | **POST** /customer | Add a customer
+*SwirepayPaymentApi.CustomerApi* | [**getCustomer**](docs/CustomerApi.md#getCustomer) | **GET** /customer | Get customers
+*SwirepayPaymentApi.DisputeApi* | [**getDispute**](docs/DisputeApi.md#getDispute) | **GET** /dispute | Get dispute
+*SwirepayPaymentApi.EventApi* | [**getEvent**](docs/EventApi.md#getEvent) | **GET** /event | Get event
+*SwirepayPaymentApi.InvoiceApi* | [**getInvoice**](docs/InvoiceApi.md#getInvoice) | **GET** /invoice | Get invoice
+*SwirepayPaymentApi.MembershipApi* | [**getMembership**](docs/MembershipApi.md#getMembership) | **GET** /membership | Get membership
+*SwirepayPaymentApi.PaymentApi* | [**getPayment**](docs/PaymentApi.md#getPayment) | **GET** /payment | Get payment
+*SwirepayPaymentApi.PaymentButtonApi* | [**getPaymentButton**](docs/PaymentButtonApi.md#getPaymentButton) | **GET** /payment-button | Get payment button
+*SwirepayPaymentApi.PaymentLinkApi* | [**getPaymentLink**](docs/PaymentLinkApi.md#getPaymentLink) | **GET** /payment-link | Get payment link
+*SwirepayPaymentApi.PaymentMethodApi* | [**addPaymentMethod**](docs/PaymentMethodApi.md#addPaymentMethod) | **POST** /payment-method | Add a payment method
+*SwirepayPaymentApi.PaymentMethodApi* | [**getPaymentMethod**](docs/PaymentMethodApi.md#getPaymentMethod) | **GET** /payment-method | Get payment methods
+*SwirepayPaymentApi.PaymentSessionApi* | [**getPaymentSession**](docs/PaymentSessionApi.md#getPaymentSession) | **GET** /payment-session | Get payment sessions
+*SwirepayPaymentApi.PayoutApi* | [**getPayout**](docs/PayoutApi.md#getPayout) | **GET** /payout | Get payout
+*SwirepayPaymentApi.PlanApi* | [**getPlan**](docs/PlanApi.md#getPlan) | **GET** /plan | Get plan
+*SwirepayPaymentApi.ProductApi* | [**getProduct**](docs/ProductApi.md#getProduct) | **GET** /product | Get product
+*SwirepayPaymentApi.PublicKeyApi* | [**getPublicKey**](docs/PublicKeyApi.md#getPublicKey) | **GET** /public-key | Get public key
+*SwirepayPaymentApi.RefundApi* | [**getRefund**](docs/RefundApi.md#getRefund) | **GET** /refund | Get refund
+*SwirepayPaymentApi.ReminderApi* | [**getReminder**](docs/ReminderApi.md#getReminder) | **GET** /reminder | Get reminder
+*SwirepayPaymentApi.ReportApi* | [**getReport**](docs/ReportApi.md#getReport) | **GET** /report | Get report
+*SwirepayPaymentApi.SetupSessionApi* | [**getSetupSession**](docs/SetupSessionApi.md#getSetupSession) | **GET** /setup-session | Get setup session
+*SwirepayPaymentApi.SetupSubscriptionApi* | [**getSubscription**](docs/SetupSubscriptionApi.md#getSubscription) | **GET** /subscription | Get subscription
+*SwirepayPaymentApi.TerminalApi* | [**getTerminal**](docs/TerminalApi.md#getTerminal) | **GET** /terminal | Get terminal
+*SwirepayPaymentApi.TransactionApi* | [**getTransaction**](docs/TransactionApi.md#getTransaction) | **GET** /transaction | Get transaction
 
 
 ## Documentation for Models
 
- - [SwirepayApi.Balance](docs/Balance.md)
- - [SwirepayApi.BalanceResponse](docs/BalanceResponse.md)
- - [SwirepayApi.BalanceResponseEntity](docs/BalanceResponseEntity.md)
- - [SwirepayApi.CardRequest](docs/CardRequest.md)
- - [SwirepayApi.CategoryResponse](docs/CategoryResponse.md)
- - [SwirepayApi.CategoryResponseEntity](docs/CategoryResponseEntity.md)
- - [SwirepayApi.CountryResponse](docs/CountryResponse.md)
- - [SwirepayApi.CurrencyResponse](docs/CurrencyResponse.md)
- - [SwirepayApi.CustomerRequest](docs/CustomerRequest.md)
- - [SwirepayApi.CustomerResponse](docs/CustomerResponse.md)
- - [SwirepayApi.DefaultResponse](docs/DefaultResponse.md)
- - [SwirepayApi.DisputeResponse](docs/DisputeResponse.md)
- - [SwirepayApi.EventResponse](docs/EventResponse.md)
- - [SwirepayApi.InvoiceResponse](docs/InvoiceResponse.md)
- - [SwirepayApi.MembershipResponse](docs/MembershipResponse.md)
- - [SwirepayApi.PaymentButtonResponse](docs/PaymentButtonResponse.md)
- - [SwirepayApi.PaymentLinkResponse](docs/PaymentLinkResponse.md)
- - [SwirepayApi.PaymentMethodRequest](docs/PaymentMethodRequest.md)
- - [SwirepayApi.PaymentMethodRequestCard](docs/PaymentMethodRequestCard.md)
- - [SwirepayApi.PaymentMethodResponse](docs/PaymentMethodResponse.md)
- - [SwirepayApi.PaymentResponse](docs/PaymentResponse.md)
- - [SwirepayApi.PaymentSessionResponse](docs/PaymentSessionResponse.md)
- - [SwirepayApi.PayoutResponse](docs/PayoutResponse.md)
- - [SwirepayApi.PlanResponse](docs/PlanResponse.md)
- - [SwirepayApi.ProductResponse](docs/ProductResponse.md)
- - [SwirepayApi.PublicKeyResponse](docs/PublicKeyResponse.md)
- - [SwirepayApi.RefundResponse](docs/RefundResponse.md)
- - [SwirepayApi.ReminderResponse](docs/ReminderResponse.md)
- - [SwirepayApi.ReportResponse](docs/ReportResponse.md)
- - [SwirepayApi.SetupSessionResponse](docs/SetupSessionResponse.md)
- - [SwirepayApi.SubscriptionResponse](docs/SubscriptionResponse.md)
- - [SwirepayApi.TerminalResponse](docs/TerminalResponse.md)
- - [SwirepayApi.TransactionResponse](docs/TransactionResponse.md)
- - [SwirepayApi.UserResponse](docs/UserResponse.md)
+ - [SwirepayPaymentApi.Balance](docs/Balance.md)
+ - [SwirepayPaymentApi.BalanceResponse](docs/BalanceResponse.md)
+ - [SwirepayPaymentApi.BalanceResponseEntity](docs/BalanceResponseEntity.md)
+ - [SwirepayPaymentApi.CardRequest](docs/CardRequest.md)
+ - [SwirepayPaymentApi.CategoryResponse](docs/CategoryResponse.md)
+ - [SwirepayPaymentApi.CategoryResponseEntity](docs/CategoryResponseEntity.md)
+ - [SwirepayPaymentApi.CountryResponse](docs/CountryResponse.md)
+ - [SwirepayPaymentApi.CurrencyResponse](docs/CurrencyResponse.md)
+ - [SwirepayPaymentApi.CustomerRequest](docs/CustomerRequest.md)
+ - [SwirepayPaymentApi.CustomerResponse](docs/CustomerResponse.md)
+ - [SwirepayPaymentApi.DefaultResponse](docs/DefaultResponse.md)
+ - [SwirepayPaymentApi.DisputeResponse](docs/DisputeResponse.md)
+ - [SwirepayPaymentApi.EventResponse](docs/EventResponse.md)
+ - [SwirepayPaymentApi.InvoiceResponse](docs/InvoiceResponse.md)
+ - [SwirepayPaymentApi.MembershipResponse](docs/MembershipResponse.md)
+ - [SwirepayPaymentApi.PaymentButtonResponse](docs/PaymentButtonResponse.md)
+ - [SwirepayPaymentApi.PaymentLinkResponse](docs/PaymentLinkResponse.md)
+ - [SwirepayPaymentApi.PaymentMethodRequest](docs/PaymentMethodRequest.md)
+ - [SwirepayPaymentApi.PaymentMethodRequestCard](docs/PaymentMethodRequestCard.md)
+ - [SwirepayPaymentApi.PaymentMethodResponse](docs/PaymentMethodResponse.md)
+ - [SwirepayPaymentApi.PaymentResponse](docs/PaymentResponse.md)
+ - [SwirepayPaymentApi.PaymentSessionResponse](docs/PaymentSessionResponse.md)
+ - [SwirepayPaymentApi.PayoutResponse](docs/PayoutResponse.md)
+ - [SwirepayPaymentApi.PlanResponse](docs/PlanResponse.md)
+ - [SwirepayPaymentApi.ProductResponse](docs/ProductResponse.md)
+ - [SwirepayPaymentApi.PublicKeyResponse](docs/PublicKeyResponse.md)
+ - [SwirepayPaymentApi.RefundResponse](docs/RefundResponse.md)
+ - [SwirepayPaymentApi.ReminderResponse](docs/ReminderResponse.md)
+ - [SwirepayPaymentApi.ReportResponse](docs/ReportResponse.md)
+ - [SwirepayPaymentApi.SetupSessionResponse](docs/SetupSessionResponse.md)
+ - [SwirepayPaymentApi.SubscriptionResponse](docs/SubscriptionResponse.md)
+ - [SwirepayPaymentApi.TerminalResponse](docs/TerminalResponse.md)
+ - [SwirepayPaymentApi.TransactionResponse](docs/TransactionResponse.md)
+ - [SwirepayPaymentApi.UserResponse](docs/UserResponse.md)
 
 
 ## Documentation for Authorization

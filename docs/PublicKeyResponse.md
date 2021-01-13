@@ -1,4 +1,4 @@
-# SwirepayApi.PublicKeyResponse
+# SwirepayPaymentApi.PublicKeyResponse
 
 ## Properties
 

@@ -1,5 +1,5 @@
 /**
- * Swirepay API
+ * Swirepay Payment API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayApi);
+    factory(root.expect, root.SwirepayPaymentApi);
   }
-}(this, function(expect, SwirepayApi) {
+}(this, function(expect, SwirepayPaymentApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayApi.PaymentMethodRequestCard();
+    instance = new SwirepayPaymentApi.PaymentMethodRequestCard();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,13 +50,13 @@
   describe('PaymentMethodRequestCard', function() {
     it('should create an instance of PaymentMethodRequestCard', function() {
       // uncomment below and update the code to test PaymentMethodRequestCard
-      //var instane = new SwirepayApi.PaymentMethodRequestCard();
-      //expect(instance).to.be.a(SwirepayApi.PaymentMethodRequestCard);
+      //var instane = new SwirepayPaymentApi.PaymentMethodRequestCard();
+      //expect(instance).to.be.a(SwirepayPaymentApi.PaymentMethodRequestCard);
     });
 
     it('should have the property content (base name: "content")', function() {
       // uncomment below and update the code to test the property content
-      //var instance = new SwirepayApi.PaymentMethodRequestCard();
+      //var instance = new SwirepayPaymentApi.PaymentMethodRequestCard();
       //expect(instance).to.be();
     });
 

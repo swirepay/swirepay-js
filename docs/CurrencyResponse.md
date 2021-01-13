@@ -1,4 +1,4 @@
-# SwirepayApi.CurrencyResponse
+# SwirepayPaymentApi.CurrencyResponse
 
 ## Properties
 

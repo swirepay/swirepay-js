@@ -1,4 +1,4 @@
-# SwirepayApi.SubscriptionResponse
+# SwirepayPaymentApi.SubscriptionResponse
 
 ## Properties
 

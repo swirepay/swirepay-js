@@ -1,4 +1,4 @@
-# SwirepayApi.PaymentLinkResponse
+# SwirepayPaymentApi.PaymentLinkResponse
 
 ## Properties
 

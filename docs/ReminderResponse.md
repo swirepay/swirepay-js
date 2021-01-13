@@ -1,4 +1,4 @@
-# SwirepayApi.ReminderResponse
+# SwirepayPaymentApi.ReminderResponse
 
 ## Properties
 

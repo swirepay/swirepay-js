@@ -1,4 +1,4 @@
-# SwirepayApi.CustomerApi
+# SwirepayPaymentApi.CustomerApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
@@ -20,17 +20,17 @@ Adds a customer to an account
 ### Example
 
 ```javascript
-import SwirepayApi from 'swirepay_api';
-let defaultClient = SwirepayApi.ApiClient.instance;
+import SwirepayPaymentApi from 'swirepay_payment_api';
+let defaultClient = SwirepayPaymentApi.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayApi.CustomerApi();
+let apiInstance = new SwirepayPaymentApi.CustomerApi();
 let xApiKey = "xApiKey_example"; // String | 
-let body = new SwirepayApi.CustomerRequest(); // CustomerRequest | Customer object that needs to be added to the account
+let body = new SwirepayPaymentApi.CustomerRequest(); // CustomerRequest | Customer object that needs to be added to the account
 apiInstance.addCustomer(xApiKey, body, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -73,15 +73,15 @@ Get customers
 ### Example
 
 ```javascript
-import SwirepayApi from 'swirepay_api';
-let defaultClient = SwirepayApi.ApiClient.instance;
+import SwirepayPaymentApi from 'swirepay_payment_api';
+let defaultClient = SwirepayPaymentApi.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayApi.CustomerApi();
+let apiInstance = new SwirepayPaymentApi.CustomerApi();
 let xApiKey = "xApiKey_example"; // String | 
 apiInstance.getCustomer(xApiKey, (error, data, response) => {
   if (error) {

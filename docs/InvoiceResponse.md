@@ -1,4 +1,4 @@
-# SwirepayApi.InvoiceResponse
+# SwirepayPaymentApi.InvoiceResponse
 
 ## Properties
 

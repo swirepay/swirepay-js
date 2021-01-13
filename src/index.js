@@ -1,5 +1,5 @@
 /**
- * Swirepay API
+ * Swirepay Payment API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -80,9 +80,9 @@ import TransactionApi from './api/TransactionApi';
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var SwirepayApi = require('index'); // See note below*.
-* var xxxSvc = new SwirepayApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new SwirepayApi.Yyy(); // Construct a model instance.
+* var SwirepayPaymentApi = require('index'); // See note below*.
+* var xxxSvc = new SwirepayPaymentApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new SwirepayPaymentApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -94,8 +94,8 @@ import TransactionApi from './api/TransactionApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new SwirepayApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new SwirepayApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new SwirepayPaymentApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new SwirepayPaymentApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.

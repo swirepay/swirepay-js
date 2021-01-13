@@ -1,4 +1,4 @@
-# SwirepayApi.CustomerRequest
+# SwirepayPaymentApi.CustomerRequest
 
 ## Properties
 

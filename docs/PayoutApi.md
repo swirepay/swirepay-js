@@ -1,4 +1,4 @@
-# SwirepayApi.PayoutApi
+# SwirepayPaymentApi.PayoutApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
@@ -19,9 +19,9 @@ Get payout
 ### Example
 
 ```javascript
-import SwirepayApi from 'swirepay_api';
+import SwirepayPaymentApi from 'swirepay_payment_api';
 
-let apiInstance = new SwirepayApi.PayoutApi();
+let apiInstance = new SwirepayPaymentApi.PayoutApi();
 let xApiKey = "xApiKey_example"; // String | 
 apiInstance.getPayout(xApiKey, (error, data, response) => {
   if (error) {

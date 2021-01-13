@@ -1,4 +1,4 @@
-# SwirepayApi.CategoryResponse
+# SwirepayPaymentApi.CategoryResponse
 
 ## Properties
 

@@ -1,4 +1,4 @@
-# SwirepayApi.Balance
+# SwirepayPaymentApi.Balance
 
 ## Properties
 
