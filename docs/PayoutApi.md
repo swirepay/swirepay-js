@@ -6,10 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPayout**](PayoutApi.md#getPayout) | **GET** /payout | Get payout
 
-
-
-## getPayout
-
+<a name="getPayout"></a>
+# **getPayout**
 > PayoutResponse getPayout(xApiKey)
 
 Get payout
@@ -17,12 +15,12 @@ Get payout
 Get payout
 
 ### Example
-
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 
 let apiInstance = new SwirepayPaymentApi.PayoutApi();
 let xApiKey = "xApiKey_example"; // String | 
+
 apiInstance.getPayout(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -33,7 +31,6 @@ apiInstance.getPayout(xApiKey, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -49,6 +46,6 @@ No authorization required
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

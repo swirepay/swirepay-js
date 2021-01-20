@@ -7,21 +7,19 @@ Method | HTTP request | Description
 [**addPaymentMethod**](PaymentMethodApi.md#addPaymentMethod) | **POST** /payment-method | Add a payment method
 [**getPaymentMethod**](PaymentMethodApi.md#getPaymentMethod) | **GET** /payment-method | Get payment methods
 
-
-
-## addPaymentMethod
-
-> PaymentMethodResponse addPaymentMethod(xApiKey, body)
+<a name="addPaymentMethod"></a>
+# **addPaymentMethod**
+> PaymentMethodResponse addPaymentMethod(bodyxApiKey)
 
 Add a payment method
 
 Adds a payment method to an account
 
 ### Example
-
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -29,9 +27,10 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new SwirepayPaymentApi.PaymentMethodApi();
-let xApiKey = "xApiKey_example"; // String | 
 let body = new SwirepayPaymentApi.PaymentMethodRequest(); // PaymentMethodRequest | Payment method object that needs to be added to the account
-apiInstance.addPaymentMethod(xApiKey, body, (error, data, response) => {
+let xApiKey = "xApiKey_example"; // String | 
+
+apiInstance.addPaymentMethod(bodyxApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -42,11 +41,10 @@ apiInstance.addPaymentMethod(xApiKey, body, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiKey** | **String**|  | 
  **body** | [**PaymentMethodRequest**](PaymentMethodRequest.md)| Payment method object that needs to be added to the account | 
+ **xApiKey** | **String**|  | 
 
 ### Return type
 
@@ -58,12 +56,11 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
-- **Accept**: application/json
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
-
-## getPaymentMethod
-
+<a name="getPaymentMethod"></a>
+# **getPaymentMethod**
 > PaymentMethodResponse getPaymentMethod(xApiKey)
 
 Get payment methods
@@ -71,10 +68,10 @@ Get payment methods
 Get payment methods
 
 ### Example
-
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -83,6 +80,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayPaymentApi.PaymentMethodApi();
 let xApiKey = "xApiKey_example"; // String | 
+
 apiInstance.getPaymentMethod(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -94,7 +92,6 @@ apiInstance.getPaymentMethod(xApiKey, (error, data, response) => {
 
 ### Parameters
 
-
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xApiKey** | **String**|  | 
@@ -109,6 +106,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

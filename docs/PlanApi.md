@@ -6,10 +6,8 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPlan**](PlanApi.md#getPlan) | **GET** /plan | Get plan
 
-
-
-## getPlan
-
+<a name="getPlan"></a>
+# **getPlan**
 > PlanResponse getPlan(xApiKey)
 
 Get plan
@@ -17,10 +15,10 @@ Get plan
 Get plan
 
 ### Example
-
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -29,6 +27,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayPaymentApi.PlanApi();
 let xApiKey = "xApiKey_example"; // String | 
+
 apiInstance.getPlan(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -39,7 +38,6 @@ apiInstance.getPlan(xApiKey, (error, data, response) => {
 ```
 
 ### Parameters
-
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -55,6 +53,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: application/json
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
 

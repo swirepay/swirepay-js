@@ -1,11 +1,8 @@
 # SwirepayPaymentApi.PaymentMethodResponse
 
 ## Properties
-
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gid** | **String** |  | [optional] 
 **createdAt** | **String** |  | [optional] 
+**gid** | **String** |  | [optional] 
 **updatedAt** | **String** |  | [optional] 
-
-
