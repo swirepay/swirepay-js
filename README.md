@@ -1,4 +1,4 @@
-# swirepay_payment_api
+# swirepay-payment_api
 
 SwirepayPaymentApi - JavaScript client for swirepay_payment_api
 Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
