@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getCountry**](CountryApi.md#getCountry) | **GET** /country | Get country
 
-<a name="getCountry"></a>
-# **getCountry**
+
+
+## getCountry
+
 > CountryResponse getCountry(xApiKey)
 
 Get country
@@ -15,12 +17,12 @@ Get country
 Get country
 
 ### Example
+
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 
 let apiInstance = new SwirepayPaymentApi.CountryApi();
 let xApiKey = "xApiKey_example"; // String | 
-
 apiInstance.getCountry(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -31,6 +33,7 @@ apiInstance.getCountry(xApiKey, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -46,6 +49,6 @@ No authorization required
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

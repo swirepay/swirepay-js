@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getRefund**](RefundApi.md#getRefund) | **GET** /refund | Get refund
 
-<a name="getRefund"></a>
-# **getRefund**
+
+
+## getRefund
+
 > RefundResponse getRefund(xApiKey)
 
 Get refund
@@ -15,10 +17,10 @@ Get refund
 Get refund
 
 ### Example
+
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
-
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -27,7 +29,6 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayPaymentApi.RefundApi();
 let xApiKey = "xApiKey_example"; // String | 
-
 apiInstance.getRefund(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -38,6 +39,7 @@ apiInstance.getRefund(xApiKey, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -53,6 +55,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

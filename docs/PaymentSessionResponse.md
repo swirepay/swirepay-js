@@ -1,8 +1,11 @@
 # SwirepayPaymentApi.PaymentSessionResponse
 
 ## Properties
+
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**createdAt** | **String** |  | [optional] 
 **gid** | **String** |  | [optional] 
+**createdAt** | **String** |  | [optional] 
 **updatedAt** | **String** |  | [optional] 
+
+

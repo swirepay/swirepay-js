@@ -7,19 +7,21 @@ Method | HTTP request | Description
 [**addCustomer**](CustomerApi.md#addCustomer) | **POST** /customer | Add a customer
 [**getCustomer**](CustomerApi.md#getCustomer) | **GET** /customer | Get customers
 
-<a name="addCustomer"></a>
-# **addCustomer**
-> CustomerResponse addCustomer(bodyxApiKey)
+
+
+## addCustomer
+
+> CustomerResponse addCustomer(xApiKey, body)
 
 Add a customer
 
 Adds a customer to an account
 
 ### Example
+
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
-
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -27,10 +29,9 @@ api_key.apiKey = 'YOUR API KEY';
 //api_key.apiKeyPrefix = 'Token';
 
 let apiInstance = new SwirepayPaymentApi.CustomerApi();
-let body = new SwirepayPaymentApi.CustomerRequest(); // CustomerRequest | Customer object that needs to be added to the account
 let xApiKey = "xApiKey_example"; // String | 
-
-apiInstance.addCustomer(bodyxApiKey, (error, data, response) => {
+let body = new SwirepayPaymentApi.CustomerRequest(); // CustomerRequest | Customer object that needs to be added to the account
+apiInstance.addCustomer(xApiKey, body, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -41,10 +42,11 @@ apiInstance.addCustomer(bodyxApiKey, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CustomerRequest**](CustomerRequest.md)| Customer object that needs to be added to the account | 
  **xApiKey** | **String**|  | 
+ **body** | [**CustomerRequest**](CustomerRequest.md)| Customer object that needs to be added to the account | 
 
 ### Return type
 
@@ -56,11 +58,12 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
-<a name="getCustomer"></a>
-# **getCustomer**
+
+## getCustomer
+
 > CustomerResponse getCustomer(xApiKey)
 
 Get customers
@@ -68,10 +71,10 @@ Get customers
 Get customers
 
 ### Example
+
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
-
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -80,7 +83,6 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayPaymentApi.CustomerApi();
 let xApiKey = "xApiKey_example"; // String | 
-
 apiInstance.getCustomer(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -92,6 +94,7 @@ apiInstance.getCustomer(xApiKey, (error, data, response) => {
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xApiKey** | **String**|  | 
@@ -106,6 +109,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

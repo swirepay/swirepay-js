@@ -6,8 +6,10 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**getPaymentButton**](PaymentButtonApi.md#getPaymentButton) | **GET** /payment-button | Get payment button
 
-<a name="getPaymentButton"></a>
-# **getPaymentButton**
+
+
+## getPaymentButton
+
 > PaymentButtonResponse getPaymentButton(xApiKey)
 
 Get payment button
@@ -15,10 +17,10 @@ Get payment button
 Get payment button
 
 ### Example
+
 ```javascript
 import SwirepayPaymentApi from 'swirepay_payment_api';
 let defaultClient = SwirepayPaymentApi.ApiClient.instance;
-
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
@@ -27,7 +29,6 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayPaymentApi.PaymentButtonApi();
 let xApiKey = "xApiKey_example"; // String | 
-
 apiInstance.getPaymentButton(xApiKey, (error, data, response) => {
   if (error) {
     console.error(error);
@@ -38,6 +39,7 @@ apiInstance.getPaymentButton(xApiKey, (error, data, response) => {
 ```
 
 ### Parameters
+
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
@@ -53,6 +55,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
