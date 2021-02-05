@@ -24,7 +24,7 @@ To publish the library as a [npm](https://www.npmjs.com/), please follow the pro
 Then install it via:
 
 ```shell
-npm install swirepay_api --save
+npm install swirepay-js --save
 ```
 
 Finally, you need to build the module:
@@ -47,7 +47,7 @@ Next, [link](https://docs.npmjs.com/cli/link) it globally in npm with the follow
 npm link
 ```
 
-To use the link you just defined in your project, switch to the directory you want to use your swirepay_api from, and run:
+To use the link you just defined in your project, switch to the directory you want to use your swirepay-js from, and run:
 
 ```shell
 npm link /path/to/<JAVASCRIPT_CLIENT_DIR>
@@ -103,7 +103,7 @@ module: {
 Please follow the [installation](#installation) instruction and execute the following JS code:
 
 ```javascript
-var SwirepayApi = require('swirepay_api');
+var SwirepayApi = require('swirepay-js');
 
 var defaultClient = SwirepayApi.ApiClient.instance;
 // Configure API key authorization: api_key
