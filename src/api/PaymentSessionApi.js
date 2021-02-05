@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,6 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import PaymentSessionListResponse from '../model/PaymentSessionListResponse';
+import PaymentSessionRequest from '../model/PaymentSessionRequest';
 import PaymentSessionResponse from '../model/PaymentSessionResponse';
 
 /**
@@ -35,25 +37,24 @@ export default class PaymentSessionApi {
 
 
     /**
-     * Callback function to receive the result of the getPaymentSession operation.
-     * @callback module:api/PaymentSessionApi~getPaymentSessionCallback
+     * Callback function to receive the result of the addPaymentSession operation.
+     * @callback module:api/PaymentSessionApi~addPaymentSessionCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get payment sessions
-     * Get payment sessions
-     * @param {String} xApiKey 
-     * @param {module:api/PaymentSessionApi~getPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * Add a new payment ssession
+     * @param {module:model/PaymentSessionRequest} paymentSessionRequest 
+     * @param {module:api/PaymentSessionApi~addPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentSessionResponse}
      */
-    getPaymentSession(xApiKey, callback) {
-      let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getPaymentSession");
+    addPaymentSession(paymentSessionRequest, callback) {
+      let postBody = paymentSessionRequest;
+      // verify the required parameter 'paymentSessionRequest' is set
+      if (paymentSessionRequest === undefined || paymentSessionRequest === null) {
+        throw new Error("Missing the required parameter 'paymentSessionRequest' when calling addPaymentSession");
       }
 
       let pathParams = {
@@ -61,7 +62,48 @@ export default class PaymentSessionApi {
       let queryParams = {
       };
       let headerParams = {
-        'x-api-key': xApiKey
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the cancelPaymentSession operation.
+     * @callback module:api/PaymentSessionApi~cancelPaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Cancel Payment Session
+     * @param {String} gid 
+     * @param {module:api/PaymentSessionApi~cancelPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    cancelPaymentSession(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling cancelPaymentSession");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
       };
       let formParams = {
       };
@@ -71,7 +113,311 @@ export default class PaymentSessionApi {
       let accepts = ['application/json'];
       let returnType = PaymentSessionResponse;
       return this.apiClient.callApi(
+        '/payment-session/{gid}/cancel', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the capturePaymentSession operation.
+     * @callback module:api/PaymentSessionApi~capturePaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Capture Payment Session
+     * @param {String} gid 
+     * @param {module:api/PaymentSessionApi~capturePaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    capturePaymentSession(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling capturePaymentSession");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}/capture', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the confirmPaymentSession operation.
+     * @callback module:api/PaymentSessionApi~confirmPaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Confirm Payment Session
+     * @param {String} gid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentSessionRequest} opts.paymentSessionRequest 
+     * @param {module:api/PaymentSessionApi~confirmPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    confirmPaymentSession(gid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['paymentSessionRequest'];
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling confirmPaymentSession");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}/confirm', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAllPaymentSession operation.
+     * @callback module:api/PaymentSessionApi~getAllPaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionListResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get all payment session
+     * Get all payment session
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.size 
+     * @param {module:api/PaymentSessionApi~getAllPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionListResponse}
+     */
+    getAllPaymentSession(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'size': opts['size']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionListResponse;
+      return this.apiClient.callApi(
         '/payment-session', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getPaymentSessionByGid operation.
+     * @callback module:api/PaymentSessionApi~getPaymentSessionByGidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Payment Session by Gid
+     * @param {String} gid 
+     * @param {module:api/PaymentSessionApi~getPaymentSessionByGidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    getPaymentSessionByGid(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling getPaymentSessionByGid");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the notifyPaymentSessionByGid operation.
+     * @callback module:api/PaymentSessionApi~notifyPaymentSessionByGidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Notify Payment Session by Gid
+     * @param {String} gid 
+     * @param {module:api/PaymentSessionApi~notifyPaymentSessionByGidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    notifyPaymentSessionByGid(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling notifyPaymentSessionByGid");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}/notify', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the refundPaymentSession operation.
+     * @callback module:api/PaymentSessionApi~refundPaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Refund Payment Session
+     * @param {String} gid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentSessionRequest} opts.paymentSessionRequest 
+     * @param {module:api/PaymentSessionApi~refundPaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    refundPaymentSession(gid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['paymentSessionRequest'];
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling refundPaymentSession");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}/refund', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the updatePaymentSession operation.
+     * @callback module:api/PaymentSessionApi~updatePaymentSessionCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentSessionResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Update Payment Session
+     * @param {String} gid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentSessionRequest} opts.paymentSessionRequest 
+     * @param {module:api/PaymentSessionApi~updatePaymentSessionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentSessionResponse}
+     */
+    updatePaymentSession(gid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['paymentSessionRequest'];
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling updatePaymentSession");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PaymentSessionResponse;
+      return this.apiClient.callApi(
+        '/payment-session/{gid}/update', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

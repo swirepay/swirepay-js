@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayPaymentApi);
+    factory(root.expect, root.SwirepayApi);
   }
-}(this, function(expect, SwirepayPaymentApi) {
+}(this, function(expect, SwirepayApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayPaymentApi.CustomerApi();
+    instance = new SwirepayApi.CustomerApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -58,10 +58,40 @@
         done();
       });
     });
-    describe('getCustomer', function() {
-      it('should call getCustomer successfully', function(done) {
-        //uncomment below and update the code to test getCustomer
-        //instance.getCustomer(function(error) {
+    describe('deleteCustomerByGid', function() {
+      it('should call deleteCustomerByGid successfully', function(done) {
+        //uncomment below and update the code to test deleteCustomerByGid
+        //instance.deleteCustomerByGid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAllCustomers', function() {
+      it('should call getAllCustomers successfully', function(done) {
+        //uncomment below and update the code to test getAllCustomers
+        //instance.getAllCustomers(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getCustomerByGid', function() {
+      it('should call getCustomerByGid successfully', function(done) {
+        //uncomment below and update the code to test getCustomerByGid
+        //instance.getCustomerByGid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateCustomer', function() {
+      it('should call updateCustomer successfully', function(done) {
+        //uncomment below and update the code to test updateCustomer
+        //instance.updateCustomer(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

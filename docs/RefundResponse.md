@@ -1,13 +1,13 @@
-# SwirepayPaymentApi.RefundResponse
+# SwirepayApi.RefundResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **message** | **String** |  | [optional] 
-**entity** | [**CategoryResponseEntity**](CategoryResponseEntity.md) |  | [optional] 
 **responseCode** | **Number** |  | [optional] 
 **status** | **String** | status of response | [optional] 
+**entity** | [**Refund**](Refund.md) |  | [optional] 
 
 
 

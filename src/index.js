@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,76 +13,117 @@
 
 
 import ApiClient from './ApiClient';
-import Balance from './model/Balance';
-import BalanceResponse from './model/BalanceResponse';
-import BalanceResponseEntity from './model/BalanceResponseEntity';
+import AccountRate from './model/AccountRate';
+import Acquirer from './model/Acquirer';
+import Address from './model/Address';
+import AddressRequest from './model/AddressRequest';
+import BillingFrequency from './model/BillingFrequency';
+import Bin from './model/Bin';
+import Card from './model/Card';
 import CardRequest from './model/CardRequest';
-import CategoryResponse from './model/CategoryResponse';
-import CategoryResponseEntity from './model/CategoryResponseEntity';
-import CountryResponse from './model/CountryResponse';
-import CurrencyResponse from './model/CurrencyResponse';
+import Category from './model/Category';
+import Country from './model/Country';
+import Currency from './model/Currency';
+import Customer from './model/Customer';
+import CustomerListResponse from './model/CustomerListResponse';
+import CustomerListResponseEntity from './model/CustomerListResponseEntity';
 import CustomerRequest from './model/CustomerRequest';
 import CustomerResponse from './model/CustomerResponse';
-import DefaultResponse from './model/DefaultResponse';
+import Dispute from './model/Dispute';
+import DisputeListResponse from './model/DisputeListResponse';
+import DisputeListResponseEntity from './model/DisputeListResponseEntity';
 import DisputeResponse from './model/DisputeResponse';
-import EventResponse from './model/EventResponse';
+import Invoice from './model/Invoice';
+import InvoiceLineItem from './model/InvoiceLineItem';
+import InvoiceLink from './model/InvoiceLink';
+import InvoiceListResponse from './model/InvoiceListResponse';
+import InvoiceListResponseEntity from './model/InvoiceListResponseEntity';
+import InvoiceRequest from './model/InvoiceRequest';
 import InvoiceResponse from './model/InvoiceResponse';
-import MembershipResponse from './model/MembershipResponse';
-import PaymentButtonResponse from './model/PaymentButtonResponse';
+import InvoicelineItemRequest from './model/InvoicelineItemRequest';
+import Payment from './model/Payment';
+import PaymentLink from './model/PaymentLink';
+import PaymentLinkListResponse from './model/PaymentLinkListResponse';
+import PaymentLinkListResponseEntity from './model/PaymentLinkListResponseEntity';
+import PaymentLinkRequest from './model/PaymentLinkRequest';
 import PaymentLinkResponse from './model/PaymentLinkResponse';
+import PaymentMethod from './model/PaymentMethod';
 import PaymentMethodRequest from './model/PaymentMethodRequest';
-import PaymentMethodRequestCard from './model/PaymentMethodRequestCard';
 import PaymentMethodResponse from './model/PaymentMethodResponse';
-import PaymentResponse from './model/PaymentResponse';
+import PaymentMethodType from './model/PaymentMethodType';
+import PaymentSession from './model/PaymentSession';
+import PaymentSessionListResponse from './model/PaymentSessionListResponse';
+import PaymentSessionListResponseEntity from './model/PaymentSessionListResponseEntity';
+import PaymentSessionPublicResponse from './model/PaymentSessionPublicResponse';
+import PaymentSessionRequest from './model/PaymentSessionRequest';
 import PaymentSessionResponse from './model/PaymentSessionResponse';
+import PaymentType from './model/PaymentType';
+import Payout from './model/Payout';
+import PayoutListResponse from './model/PayoutListResponse';
+import PayoutListResponseEntity from './model/PayoutListResponseEntity';
 import PayoutResponse from './model/PayoutResponse';
-import PlanResponse from './model/PlanResponse';
-import ProductResponse from './model/ProductResponse';
+import Plan from './model/Plan';
+import PublicKey from './model/PublicKey';
+import PublicKeyListResponse from './model/PublicKeyListResponse';
+import PublicKeyListResponseEntity from './model/PublicKeyListResponseEntity';
+import PublicKeyRequest from './model/PublicKeyRequest';
 import PublicKeyResponse from './model/PublicKeyResponse';
+import Rate from './model/Rate';
+import Refund from './model/Refund';
+import RefundListResponse from './model/RefundListResponse';
+import RefundListResponseEntity from './model/RefundListResponseEntity';
 import RefundResponse from './model/RefundResponse';
-import ReminderResponse from './model/ReminderResponse';
-import ReportResponse from './model/ReportResponse';
-import SetupSessionResponse from './model/SetupSessionResponse';
+import SecretKey from './model/SecretKey';
+import SecretKeyListResponse from './model/SecretKeyListResponse';
+import SecretKeyListResponseEntity from './model/SecretKeyListResponseEntity';
+import SecretKeyRequest from './model/SecretKeyRequest';
+import SecretKeyResponse from './model/SecretKeyResponse';
+import Subscription from './model/Subscription';
+import SubscriptionButton from './model/SubscriptionButton';
+import SubscriptionLineItem from './model/SubscriptionLineItem';
+import SubscriptionLineItemRequest from './model/SubscriptionLineItemRequest';
+import SubscriptionLink from './model/SubscriptionLink';
+import SubscriptionListResponse from './model/SubscriptionListResponse';
+import SubscriptionListResponseEntity from './model/SubscriptionListResponseEntity';
+import SubscriptionRequest from './model/SubscriptionRequest';
 import SubscriptionResponse from './model/SubscriptionResponse';
-import TerminalResponse from './model/TerminalResponse';
-import TransactionResponse from './model/TransactionResponse';
-import UserResponse from './model/UserResponse';
-import BalanceApi from './api/BalanceApi';
-import CategoryApi from './api/CategoryApi';
-import CountryApi from './api/CountryApi';
-import CurrencyApi from './api/CurrencyApi';
+import Support from './model/Support';
+import Tax from './model/Tax';
+import Transaction from './model/Transaction';
+import TransactionListResponse from './model/TransactionListResponse';
+import TransactionListResponseEntity from './model/TransactionListResponseEntity';
+import Upi from './model/Upi';
+import UpiRequest from './model/UpiRequest';
+import Webhook from './model/Webhook';
+import WebhookEvent from './model/WebhookEvent';
+import WebhookListResponse from './model/WebhookListResponse';
+import WebhookListResponseEntity from './model/WebhookListResponseEntity';
+import WebhookRequest from './model/WebhookRequest';
+import WebhookResponse from './model/WebhookResponse';
 import CustomerApi from './api/CustomerApi';
 import DisputeApi from './api/DisputeApi';
-import EventApi from './api/EventApi';
 import InvoiceApi from './api/InvoiceApi';
-import MembershipApi from './api/MembershipApi';
-import PaymentApi from './api/PaymentApi';
-import PaymentButtonApi from './api/PaymentButtonApi';
 import PaymentLinkApi from './api/PaymentLinkApi';
 import PaymentMethodApi from './api/PaymentMethodApi';
 import PaymentSessionApi from './api/PaymentSessionApi';
 import PayoutApi from './api/PayoutApi';
-import PlanApi from './api/PlanApi';
-import ProductApi from './api/ProductApi';
 import PublicKeyApi from './api/PublicKeyApi';
 import RefundApi from './api/RefundApi';
-import ReminderApi from './api/ReminderApi';
-import ReportApi from './api/ReportApi';
-import SetupSessionApi from './api/SetupSessionApi';
-import SetupSubscriptionApi from './api/SetupSubscriptionApi';
-import TerminalApi from './api/TerminalApi';
+import SecretKeyApi from './api/SecretKeyApi';
+import SubscriptionApi from './api/SubscriptionApi';
 import TransactionApi from './api/TransactionApi';
+import WebhookApi from './api/WebhookApi';
 
 
 /**
-* Swirepay_REST_APIs_are_resource_oriented_URLs_that_accept_JSON_encodedrequest_bodies_return_JSON_encoded_responses_and_use_standard_HTTP_responsecodes_authentication_and_verbs__You_can_use_the_Swirepay_API_in_test_mode_whichdoes_not_affect_your_live_data_or_interact_with_the_banking_networks__The_APIkey_you_use_to_authenticate_the_request_determines_whether_the_request_is_livemode_or_test_mode_.<br>
+* Swirepay_REST_APIs_are_resource_oriented_URLs_that_accept_JSON_encoded_request_bodies_return_JSON_encoded_responses_and_use_standard_HTTP_response_codes_authentication_and_verbs__You_can_use_the_Swirepay_API_in_test_mode_which_does_not_affect_your_live_data_or_interact_with_the_banking_networks__The_API_key_you_use_to_authenticate_the_request_determines_whether_the_request_is_live_mode_or_test_mode_.<br>
 * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
 * <p>
 * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:
 * <pre>
-* var SwirepayPaymentApi = require('index'); // See note below*.
-* var xxxSvc = new SwirepayPaymentApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyyModel = new SwirepayPaymentApi.Yyy(); // Construct a model instance.
+* var SwirepayApi = require('index'); // See note below*.
+* var xxxSvc = new SwirepayApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyyModel = new SwirepayApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -94,8 +135,8 @@ import TransactionApi from './api/TransactionApi';
 * <p>
 * A non-AMD browser application (discouraged) might do something like this:
 * <pre>
-* var xxxSvc = new SwirepayPaymentApi.XxxApi(); // Allocate the API class we're going to use.
-* var yyy = new SwirepayPaymentApi.Yyy(); // Construct a model instance.
+* var xxxSvc = new SwirepayApi.XxxApi(); // Allocate the API class we're going to use.
+* var yyy = new SwirepayApi.Yyy(); // Construct a model instance.
 * yyyModel.someProperty = 'someValue';
 * ...
 * var zzz = xxxSvc.doSomething(yyyModel); // Invoke the service.
@@ -113,22 +154,46 @@ export {
     ApiClient,
 
     /**
-     * The Balance model constructor.
-     * @property {module:model/Balance}
+     * The AccountRate model constructor.
+     * @property {module:model/AccountRate}
      */
-    Balance,
+    AccountRate,
 
     /**
-     * The BalanceResponse model constructor.
-     * @property {module:model/BalanceResponse}
+     * The Acquirer model constructor.
+     * @property {module:model/Acquirer}
      */
-    BalanceResponse,
+    Acquirer,
 
     /**
-     * The BalanceResponseEntity model constructor.
-     * @property {module:model/BalanceResponseEntity}
+     * The Address model constructor.
+     * @property {module:model/Address}
      */
-    BalanceResponseEntity,
+    Address,
+
+    /**
+     * The AddressRequest model constructor.
+     * @property {module:model/AddressRequest}
+     */
+    AddressRequest,
+
+    /**
+     * The BillingFrequency model constructor.
+     * @property {module:model/BillingFrequency}
+     */
+    BillingFrequency,
+
+    /**
+     * The Bin model constructor.
+     * @property {module:model/Bin}
+     */
+    Bin,
+
+    /**
+     * The Card model constructor.
+     * @property {module:model/Card}
+     */
+    Card,
 
     /**
      * The CardRequest model constructor.
@@ -137,28 +202,40 @@ export {
     CardRequest,
 
     /**
-     * The CategoryResponse model constructor.
-     * @property {module:model/CategoryResponse}
+     * The Category model constructor.
+     * @property {module:model/Category}
      */
-    CategoryResponse,
+    Category,
 
     /**
-     * The CategoryResponseEntity model constructor.
-     * @property {module:model/CategoryResponseEntity}
+     * The Country model constructor.
+     * @property {module:model/Country}
      */
-    CategoryResponseEntity,
+    Country,
 
     /**
-     * The CountryResponse model constructor.
-     * @property {module:model/CountryResponse}
+     * The Currency model constructor.
+     * @property {module:model/Currency}
      */
-    CountryResponse,
+    Currency,
 
     /**
-     * The CurrencyResponse model constructor.
-     * @property {module:model/CurrencyResponse}
+     * The Customer model constructor.
+     * @property {module:model/Customer}
      */
-    CurrencyResponse,
+    Customer,
+
+    /**
+     * The CustomerListResponse model constructor.
+     * @property {module:model/CustomerListResponse}
+     */
+    CustomerListResponse,
+
+    /**
+     * The CustomerListResponseEntity model constructor.
+     * @property {module:model/CustomerListResponseEntity}
+     */
+    CustomerListResponseEntity,
 
     /**
      * The CustomerRequest model constructor.
@@ -173,10 +250,22 @@ export {
     CustomerResponse,
 
     /**
-     * The DefaultResponse model constructor.
-     * @property {module:model/DefaultResponse}
+     * The Dispute model constructor.
+     * @property {module:model/Dispute}
      */
-    DefaultResponse,
+    Dispute,
+
+    /**
+     * The DisputeListResponse model constructor.
+     * @property {module:model/DisputeListResponse}
+     */
+    DisputeListResponse,
+
+    /**
+     * The DisputeListResponseEntity model constructor.
+     * @property {module:model/DisputeListResponseEntity}
+     */
+    DisputeListResponseEntity,
 
     /**
      * The DisputeResponse model constructor.
@@ -185,10 +274,40 @@ export {
     DisputeResponse,
 
     /**
-     * The EventResponse model constructor.
-     * @property {module:model/EventResponse}
+     * The Invoice model constructor.
+     * @property {module:model/Invoice}
      */
-    EventResponse,
+    Invoice,
+
+    /**
+     * The InvoiceLineItem model constructor.
+     * @property {module:model/InvoiceLineItem}
+     */
+    InvoiceLineItem,
+
+    /**
+     * The InvoiceLink model constructor.
+     * @property {module:model/InvoiceLink}
+     */
+    InvoiceLink,
+
+    /**
+     * The InvoiceListResponse model constructor.
+     * @property {module:model/InvoiceListResponse}
+     */
+    InvoiceListResponse,
+
+    /**
+     * The InvoiceListResponseEntity model constructor.
+     * @property {module:model/InvoiceListResponseEntity}
+     */
+    InvoiceListResponseEntity,
+
+    /**
+     * The InvoiceRequest model constructor.
+     * @property {module:model/InvoiceRequest}
+     */
+    InvoiceRequest,
 
     /**
      * The InvoiceResponse model constructor.
@@ -197,16 +316,40 @@ export {
     InvoiceResponse,
 
     /**
-     * The MembershipResponse model constructor.
-     * @property {module:model/MembershipResponse}
+     * The InvoicelineItemRequest model constructor.
+     * @property {module:model/InvoicelineItemRequest}
      */
-    MembershipResponse,
+    InvoicelineItemRequest,
 
     /**
-     * The PaymentButtonResponse model constructor.
-     * @property {module:model/PaymentButtonResponse}
+     * The Payment model constructor.
+     * @property {module:model/Payment}
      */
-    PaymentButtonResponse,
+    Payment,
+
+    /**
+     * The PaymentLink model constructor.
+     * @property {module:model/PaymentLink}
+     */
+    PaymentLink,
+
+    /**
+     * The PaymentLinkListResponse model constructor.
+     * @property {module:model/PaymentLinkListResponse}
+     */
+    PaymentLinkListResponse,
+
+    /**
+     * The PaymentLinkListResponseEntity model constructor.
+     * @property {module:model/PaymentLinkListResponseEntity}
+     */
+    PaymentLinkListResponseEntity,
+
+    /**
+     * The PaymentLinkRequest model constructor.
+     * @property {module:model/PaymentLinkRequest}
+     */
+    PaymentLinkRequest,
 
     /**
      * The PaymentLinkResponse model constructor.
@@ -215,16 +358,16 @@ export {
     PaymentLinkResponse,
 
     /**
+     * The PaymentMethod model constructor.
+     * @property {module:model/PaymentMethod}
+     */
+    PaymentMethod,
+
+    /**
      * The PaymentMethodRequest model constructor.
      * @property {module:model/PaymentMethodRequest}
      */
     PaymentMethodRequest,
-
-    /**
-     * The PaymentMethodRequestCard model constructor.
-     * @property {module:model/PaymentMethodRequestCard}
-     */
-    PaymentMethodRequestCard,
 
     /**
      * The PaymentMethodResponse model constructor.
@@ -233,10 +376,40 @@ export {
     PaymentMethodResponse,
 
     /**
-     * The PaymentResponse model constructor.
-     * @property {module:model/PaymentResponse}
+     * The PaymentMethodType model constructor.
+     * @property {module:model/PaymentMethodType}
      */
-    PaymentResponse,
+    PaymentMethodType,
+
+    /**
+     * The PaymentSession model constructor.
+     * @property {module:model/PaymentSession}
+     */
+    PaymentSession,
+
+    /**
+     * The PaymentSessionListResponse model constructor.
+     * @property {module:model/PaymentSessionListResponse}
+     */
+    PaymentSessionListResponse,
+
+    /**
+     * The PaymentSessionListResponseEntity model constructor.
+     * @property {module:model/PaymentSessionListResponseEntity}
+     */
+    PaymentSessionListResponseEntity,
+
+    /**
+     * The PaymentSessionPublicResponse model constructor.
+     * @property {module:model/PaymentSessionPublicResponse}
+     */
+    PaymentSessionPublicResponse,
+
+    /**
+     * The PaymentSessionRequest model constructor.
+     * @property {module:model/PaymentSessionRequest}
+     */
+    PaymentSessionRequest,
 
     /**
      * The PaymentSessionResponse model constructor.
@@ -245,22 +418,64 @@ export {
     PaymentSessionResponse,
 
     /**
+     * The PaymentType model constructor.
+     * @property {module:model/PaymentType}
+     */
+    PaymentType,
+
+    /**
+     * The Payout model constructor.
+     * @property {module:model/Payout}
+     */
+    Payout,
+
+    /**
+     * The PayoutListResponse model constructor.
+     * @property {module:model/PayoutListResponse}
+     */
+    PayoutListResponse,
+
+    /**
+     * The PayoutListResponseEntity model constructor.
+     * @property {module:model/PayoutListResponseEntity}
+     */
+    PayoutListResponseEntity,
+
+    /**
      * The PayoutResponse model constructor.
      * @property {module:model/PayoutResponse}
      */
     PayoutResponse,
 
     /**
-     * The PlanResponse model constructor.
-     * @property {module:model/PlanResponse}
+     * The Plan model constructor.
+     * @property {module:model/Plan}
      */
-    PlanResponse,
+    Plan,
 
     /**
-     * The ProductResponse model constructor.
-     * @property {module:model/ProductResponse}
+     * The PublicKey model constructor.
+     * @property {module:model/PublicKey}
      */
-    ProductResponse,
+    PublicKey,
+
+    /**
+     * The PublicKeyListResponse model constructor.
+     * @property {module:model/PublicKeyListResponse}
+     */
+    PublicKeyListResponse,
+
+    /**
+     * The PublicKeyListResponseEntity model constructor.
+     * @property {module:model/PublicKeyListResponseEntity}
+     */
+    PublicKeyListResponseEntity,
+
+    /**
+     * The PublicKeyRequest model constructor.
+     * @property {module:model/PublicKeyRequest}
+     */
+    PublicKeyRequest,
 
     /**
      * The PublicKeyResponse model constructor.
@@ -269,28 +484,112 @@ export {
     PublicKeyResponse,
 
     /**
+     * The Rate model constructor.
+     * @property {module:model/Rate}
+     */
+    Rate,
+
+    /**
+     * The Refund model constructor.
+     * @property {module:model/Refund}
+     */
+    Refund,
+
+    /**
+     * The RefundListResponse model constructor.
+     * @property {module:model/RefundListResponse}
+     */
+    RefundListResponse,
+
+    /**
+     * The RefundListResponseEntity model constructor.
+     * @property {module:model/RefundListResponseEntity}
+     */
+    RefundListResponseEntity,
+
+    /**
      * The RefundResponse model constructor.
      * @property {module:model/RefundResponse}
      */
     RefundResponse,
 
     /**
-     * The ReminderResponse model constructor.
-     * @property {module:model/ReminderResponse}
+     * The SecretKey model constructor.
+     * @property {module:model/SecretKey}
      */
-    ReminderResponse,
+    SecretKey,
 
     /**
-     * The ReportResponse model constructor.
-     * @property {module:model/ReportResponse}
+     * The SecretKeyListResponse model constructor.
+     * @property {module:model/SecretKeyListResponse}
      */
-    ReportResponse,
+    SecretKeyListResponse,
 
     /**
-     * The SetupSessionResponse model constructor.
-     * @property {module:model/SetupSessionResponse}
+     * The SecretKeyListResponseEntity model constructor.
+     * @property {module:model/SecretKeyListResponseEntity}
      */
-    SetupSessionResponse,
+    SecretKeyListResponseEntity,
+
+    /**
+     * The SecretKeyRequest model constructor.
+     * @property {module:model/SecretKeyRequest}
+     */
+    SecretKeyRequest,
+
+    /**
+     * The SecretKeyResponse model constructor.
+     * @property {module:model/SecretKeyResponse}
+     */
+    SecretKeyResponse,
+
+    /**
+     * The Subscription model constructor.
+     * @property {module:model/Subscription}
+     */
+    Subscription,
+
+    /**
+     * The SubscriptionButton model constructor.
+     * @property {module:model/SubscriptionButton}
+     */
+    SubscriptionButton,
+
+    /**
+     * The SubscriptionLineItem model constructor.
+     * @property {module:model/SubscriptionLineItem}
+     */
+    SubscriptionLineItem,
+
+    /**
+     * The SubscriptionLineItemRequest model constructor.
+     * @property {module:model/SubscriptionLineItemRequest}
+     */
+    SubscriptionLineItemRequest,
+
+    /**
+     * The SubscriptionLink model constructor.
+     * @property {module:model/SubscriptionLink}
+     */
+    SubscriptionLink,
+
+    /**
+     * The SubscriptionListResponse model constructor.
+     * @property {module:model/SubscriptionListResponse}
+     */
+    SubscriptionListResponse,
+
+    /**
+     * The SubscriptionListResponseEntity model constructor.
+     * @property {module:model/SubscriptionListResponseEntity}
+     */
+    SubscriptionListResponseEntity,
+
+    /**
+     * The SubscriptionRequest model constructor.
+     * @property {module:model/SubscriptionRequest}
+     */
+    SubscriptionRequest,
 
     /**
      * The SubscriptionResponse model constructor.
@@ -299,46 +598,82 @@ export {
     SubscriptionResponse,
 
     /**
-     * The TerminalResponse model constructor.
-     * @property {module:model/TerminalResponse}
+     * The Support model constructor.
+     * @property {module:model/Support}
      */
-    TerminalResponse,
+    Support,
 
     /**
-     * The TransactionResponse model constructor.
-     * @property {module:model/TransactionResponse}
+     * The Tax model constructor.
+     * @property {module:model/Tax}
      */
-    TransactionResponse,
+    Tax,
 
     /**
-     * The UserResponse model constructor.
-     * @property {module:model/UserResponse}
+     * The Transaction model constructor.
+     * @property {module:model/Transaction}
      */
-    UserResponse,
+    Transaction,
 
     /**
-    * The BalanceApi service constructor.
-    * @property {module:api/BalanceApi}
-    */
-    BalanceApi,
+     * The TransactionListResponse model constructor.
+     * @property {module:model/TransactionListResponse}
+     */
+    TransactionListResponse,
 
     /**
-    * The CategoryApi service constructor.
-    * @property {module:api/CategoryApi}
-    */
-    CategoryApi,
+     * The TransactionListResponseEntity model constructor.
+     * @property {module:model/TransactionListResponseEntity}
+     */
+    TransactionListResponseEntity,
 
     /**
-    * The CountryApi service constructor.
-    * @property {module:api/CountryApi}
-    */
-    CountryApi,
+     * The Upi model constructor.
+     * @property {module:model/Upi}
+     */
+    Upi,
 
     /**
-    * The CurrencyApi service constructor.
-    * @property {module:api/CurrencyApi}
-    */
-    CurrencyApi,
+     * The UpiRequest model constructor.
+     * @property {module:model/UpiRequest}
+     */
+    UpiRequest,
+
+    /**
+     * The Webhook model constructor.
+     * @property {module:model/Webhook}
+     */
+    Webhook,
+
+    /**
+     * The WebhookEvent model constructor.
+     * @property {module:model/WebhookEvent}
+     */
+    WebhookEvent,
+
+    /**
+     * The WebhookListResponse model constructor.
+     * @property {module:model/WebhookListResponse}
+     */
+    WebhookListResponse,
+
+    /**
+     * The WebhookListResponseEntity model constructor.
+     * @property {module:model/WebhookListResponseEntity}
+     */
+    WebhookListResponseEntity,
+
+    /**
+     * The WebhookRequest model constructor.
+     * @property {module:model/WebhookRequest}
+     */
+    WebhookRequest,
+
+    /**
+     * The WebhookResponse model constructor.
+     * @property {module:model/WebhookResponse}
+     */
+    WebhookResponse,
 
     /**
     * The CustomerApi service constructor.
@@ -353,34 +688,10 @@ export {
     DisputeApi,
 
     /**
-    * The EventApi service constructor.
-    * @property {module:api/EventApi}
-    */
-    EventApi,
-
-    /**
     * The InvoiceApi service constructor.
     * @property {module:api/InvoiceApi}
     */
     InvoiceApi,
-
-    /**
-    * The MembershipApi service constructor.
-    * @property {module:api/MembershipApi}
-    */
-    MembershipApi,
-
-    /**
-    * The PaymentApi service constructor.
-    * @property {module:api/PaymentApi}
-    */
-    PaymentApi,
-
-    /**
-    * The PaymentButtonApi service constructor.
-    * @property {module:api/PaymentButtonApi}
-    */
-    PaymentButtonApi,
 
     /**
     * The PaymentLinkApi service constructor.
@@ -407,18 +718,6 @@ export {
     PayoutApi,
 
     /**
-    * The PlanApi service constructor.
-    * @property {module:api/PlanApi}
-    */
-    PlanApi,
-
-    /**
-    * The ProductApi service constructor.
-    * @property {module:api/ProductApi}
-    */
-    ProductApi,
-
-    /**
     * The PublicKeyApi service constructor.
     * @property {module:api/PublicKeyApi}
     */
@@ -431,38 +730,26 @@ export {
     RefundApi,
 
     /**
-    * The ReminderApi service constructor.
-    * @property {module:api/ReminderApi}
+    * The SecretKeyApi service constructor.
+    * @property {module:api/SecretKeyApi}
     */
-    ReminderApi,
+    SecretKeyApi,
 
     /**
-    * The ReportApi service constructor.
-    * @property {module:api/ReportApi}
+    * The SubscriptionApi service constructor.
+    * @property {module:api/SubscriptionApi}
     */
-    ReportApi,
-
-    /**
-    * The SetupSessionApi service constructor.
-    * @property {module:api/SetupSessionApi}
-    */
-    SetupSessionApi,
-
-    /**
-    * The SetupSubscriptionApi service constructor.
-    * @property {module:api/SetupSubscriptionApi}
-    */
-    SetupSubscriptionApi,
-
-    /**
-    * The TerminalApi service constructor.
-    * @property {module:api/TerminalApi}
-    */
-    TerminalApi,
+    SubscriptionApi,
 
     /**
     * The TransactionApi service constructor.
     * @property {module:api/TransactionApi}
     */
-    TransactionApi
+    TransactionApi,
+
+    /**
+    * The WebhookApi service constructor.
+    * @property {module:api/WebhookApi}
+    */
+    WebhookApi
 };

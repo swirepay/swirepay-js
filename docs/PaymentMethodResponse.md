@@ -1,11 +1,23 @@
-# SwirepayPaymentApi.PaymentMethodResponse
+# SwirepayApi.PaymentMethodResponse
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**gid** | **String** |  | [optional] 
-**createdAt** | **String** |  | [optional] 
-**updatedAt** | **String** |  | [optional] 
+**message** | **String** |  | [optional] 
+**responseCode** | **Number** |  | [optional] 
+**status** | **String** | status of response | [optional] 
+**entity** | [**PaymentMethod**](PaymentMethod.md) |  | [optional] 
+
+
+
+## Enum: StatusEnum
+
+
+* `SUCCESS` (value: `"SUCCESS"`)
+
+* `FAILED` (value: `"FAILED"`)
+
+
 
 

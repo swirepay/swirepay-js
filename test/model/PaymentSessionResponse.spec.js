@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayPaymentApi);
+    factory(root.expect, root.SwirepayApi);
   }
-}(this, function(expect, SwirepayPaymentApi) {
+}(this, function(expect, SwirepayApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayPaymentApi.PaymentSessionResponse();
+    instance = new SwirepayApi.PaymentSessionResponse();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,25 +50,31 @@
   describe('PaymentSessionResponse', function() {
     it('should create an instance of PaymentSessionResponse', function() {
       // uncomment below and update the code to test PaymentSessionResponse
-      //var instane = new SwirepayPaymentApi.PaymentSessionResponse();
-      //expect(instance).to.be.a(SwirepayPaymentApi.PaymentSessionResponse);
+      //var instane = new SwirepayApi.PaymentSessionResponse();
+      //expect(instance).to.be.a(SwirepayApi.PaymentSessionResponse);
     });
 
-    it('should have the property gid (base name: "gid")', function() {
-      // uncomment below and update the code to test the property gid
-      //var instance = new SwirepayPaymentApi.PaymentSessionResponse();
+    it('should have the property message (base name: "message")', function() {
+      // uncomment below and update the code to test the property message
+      //var instance = new SwirepayApi.PaymentSessionResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property createdAt (base name: "createdAt")', function() {
-      // uncomment below and update the code to test the property createdAt
-      //var instance = new SwirepayPaymentApi.PaymentSessionResponse();
+    it('should have the property responseCode (base name: "responseCode")', function() {
+      // uncomment below and update the code to test the property responseCode
+      //var instance = new SwirepayApi.PaymentSessionResponse();
       //expect(instance).to.be();
     });
 
-    it('should have the property updatedAt (base name: "updatedAt")', function() {
-      // uncomment below and update the code to test the property updatedAt
-      //var instance = new SwirepayPaymentApi.PaymentSessionResponse();
+    it('should have the property status (base name: "status")', function() {
+      // uncomment below and update the code to test the property status
+      //var instance = new SwirepayApi.PaymentSessionResponse();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property entity (base name: "entity")', function() {
+      // uncomment below and update the code to test the property entity
+      //var instance = new SwirepayApi.PaymentSessionResponse();
       //expect(instance).to.be();
     });
 

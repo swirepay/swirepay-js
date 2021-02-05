@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import Customer from './Customer';
 
 /**
  * The CustomerResponse model module.
@@ -47,23 +48,17 @@ class CustomerResponse {
         if (data) {
             obj = obj || new CustomerResponse();
 
-            if (data.hasOwnProperty('gid')) {
-                obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
-            if (data.hasOwnProperty('email')) {
-                obj['email'] = ApiClient.convertToType(data['email'], 'String');
+            if (data.hasOwnProperty('responseCode')) {
+                obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'Number');
             }
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
             }
-            if (data.hasOwnProperty('phoneNumber')) {
-                obj['phoneNumber'] = ApiClient.convertToType(data['phoneNumber'], 'String');
-            }
-            if (data.hasOwnProperty('createdAt')) {
-                obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'String');
-            }
-            if (data.hasOwnProperty('updatedAt')) {
-                obj['updatedAt'] = ApiClient.convertToType(data['updatedAt'], 'String');
+            if (data.hasOwnProperty('entity')) {
+                obj['entity'] = Customer.constructFromObject(data['entity']);
             }
         }
         return obj;
@@ -73,37 +68,49 @@ class CustomerResponse {
 }
 
 /**
- * @member {String} gid
+ * @member {String} message
  */
-CustomerResponse.prototype['gid'] = undefined;
+CustomerResponse.prototype['message'] = undefined;
 
 /**
- * @member {String} email
+ * @member {Number} responseCode
  */
-CustomerResponse.prototype['email'] = undefined;
+CustomerResponse.prototype['responseCode'] = undefined;
 
 /**
- * @member {String} name
+ * status of response
+ * @member {module:model/CustomerResponse.StatusEnum} status
  */
-CustomerResponse.prototype['name'] = undefined;
+CustomerResponse.prototype['status'] = undefined;
 
 /**
- * @member {String} phoneNumber
+ * @member {module:model/Customer} entity
  */
-CustomerResponse.prototype['phoneNumber'] = undefined;
+CustomerResponse.prototype['entity'] = undefined;
+
+
+
+
 
 /**
- * @member {String} createdAt
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
  */
-CustomerResponse.prototype['createdAt'] = undefined;
+CustomerResponse['StatusEnum'] = {
 
-/**
- * @member {String} updatedAt
- */
-CustomerResponse.prototype['updatedAt'] = undefined;
+    /**
+     * value: "SUCCESS"
+     * @const
+     */
+    "SUCCESS": "SUCCESS",
 
-
-
+    /**
+     * value: "FAILED"
+     * @const
+     */
+    "FAILED": "FAILED"
+};
 
 
 

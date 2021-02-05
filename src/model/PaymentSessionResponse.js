@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -12,6 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
+import PaymentSession from './PaymentSession';
 
 /**
  * The PaymentSessionResponse model module.
@@ -47,14 +48,17 @@ class PaymentSessionResponse {
         if (data) {
             obj = obj || new PaymentSessionResponse();
 
-            if (data.hasOwnProperty('gid')) {
-                obj['gid'] = ApiClient.convertToType(data['gid'], 'String');
+            if (data.hasOwnProperty('message')) {
+                obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
-            if (data.hasOwnProperty('createdAt')) {
-                obj['createdAt'] = ApiClient.convertToType(data['createdAt'], 'String');
+            if (data.hasOwnProperty('responseCode')) {
+                obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'Number');
             }
-            if (data.hasOwnProperty('updatedAt')) {
-                obj['updatedAt'] = ApiClient.convertToType(data['updatedAt'], 'String');
+            if (data.hasOwnProperty('status')) {
+                obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('entity')) {
+                obj['entity'] = PaymentSession.constructFromObject(data['entity']);
             }
         }
         return obj;
@@ -64,22 +68,49 @@ class PaymentSessionResponse {
 }
 
 /**
- * @member {String} gid
+ * @member {String} message
  */
-PaymentSessionResponse.prototype['gid'] = undefined;
+PaymentSessionResponse.prototype['message'] = undefined;
 
 /**
- * @member {String} createdAt
+ * @member {Number} responseCode
  */
-PaymentSessionResponse.prototype['createdAt'] = undefined;
+PaymentSessionResponse.prototype['responseCode'] = undefined;
 
 /**
- * @member {String} updatedAt
+ * status of response
+ * @member {module:model/PaymentSessionResponse.StatusEnum} status
  */
-PaymentSessionResponse.prototype['updatedAt'] = undefined;
+PaymentSessionResponse.prototype['status'] = undefined;
+
+/**
+ * @member {module:model/PaymentSession} entity
+ */
+PaymentSessionResponse.prototype['entity'] = undefined;
 
 
 
+
+
+/**
+ * Allowed values for the <code>status</code> property.
+ * @enum {String}
+ * @readonly
+ */
+PaymentSessionResponse['StatusEnum'] = {
+
+    /**
+     * value: "SUCCESS"
+     * @const
+     */
+    "SUCCESS": "SUCCESS",
+
+    /**
+     * value: "FAILED"
+     * @const
+     */
+    "FAILED": "FAILED"
+};
 
 
 

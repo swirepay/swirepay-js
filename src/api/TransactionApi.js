@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,7 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
-import TransactionResponse from '../model/TransactionResponse';
+import TransactionListResponse from '../model/TransactionListResponse';
 
 /**
 * Transaction service.
@@ -35,33 +35,32 @@ export default class TransactionApi {
 
 
     /**
-     * Callback function to receive the result of the getTransaction operation.
-     * @callback module:api/TransactionApi~getTransactionCallback
+     * Callback function to receive the result of the getAllTransaction operation.
+     * @callback module:api/TransactionApi~getAllTransactionCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/TransactionResponse} data The data returned by the service call.
+     * @param {module:model/TransactionListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get transaction
-     * Get transaction
-     * @param {String} xApiKey 
-     * @param {module:api/TransactionApi~getTransactionCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/TransactionResponse}
+     * Get All transactions
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.size 
+     * @param {module:api/TransactionApi~getAllTransactionCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/TransactionListResponse}
      */
-    getTransaction(xApiKey, callback) {
+    getAllTransaction(opts, callback) {
+      opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getTransaction");
-      }
 
       let pathParams = {
       };
       let queryParams = {
+        'page': opts['page'],
+        'size': opts['size']
       };
       let headerParams = {
-        'x-api-key': xApiKey
       };
       let formParams = {
       };
@@ -69,7 +68,7 @@ export default class TransactionApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = TransactionResponse;
+      let returnType = TransactionListResponse;
       return this.apiClient.callApi(
         '/transaction', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,

@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,6 +13,7 @@
 
 
 import ApiClient from "../ApiClient";
+import DisputeListResponse from '../model/DisputeListResponse';
 import DisputeResponse from '../model/DisputeResponse';
 
 /**
@@ -35,33 +36,74 @@ export default class DisputeApi {
 
 
     /**
-     * Callback function to receive the result of the getDispute operation.
-     * @callback module:api/DisputeApi~getDisputeCallback
+     * Callback function to receive the result of the getAllDisputes operation.
+     * @callback module:api/DisputeApi~getAllDisputesCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DisputeListResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get All Disputes
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.size 
+     * @param {module:api/DisputeApi~getAllDisputesCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DisputeListResponse}
+     */
+    getAllDisputes(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'size': opts['size']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = DisputeListResponse;
+      return this.apiClient.callApi(
+        '/dispute', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getDisputeByGid operation.
+     * @callback module:api/DisputeApi~getDisputeByGidCallback
      * @param {String} error Error message, if any.
      * @param {module:model/DisputeResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get dispute
-     * Get dispute
-     * @param {String} xApiKey 
-     * @param {module:api/DisputeApi~getDisputeCallback} callback The callback function, accepting three arguments: error, data, response
+     * Get dispute by Gid
+     * @param {String} gid 
+     * @param {module:api/DisputeApi~getDisputeByGidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/DisputeResponse}
      */
-    getDispute(xApiKey, callback) {
+    getDisputeByGid(gid, callback) {
       let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getDispute");
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling getDisputeByGid");
       }
 
       let pathParams = {
+        'gid': gid
       };
       let queryParams = {
       };
       let headerParams = {
-        'x-api-key': xApiKey
       };
       let formParams = {
       };
@@ -71,7 +113,7 @@ export default class DisputeApi {
       let accepts = ['application/json'];
       let returnType = DisputeResponse;
       return this.apiClient.callApi(
-        '/dispute', 'GET',
+        '/dispute/{gid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

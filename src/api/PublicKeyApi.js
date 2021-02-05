@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,6 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import PublicKeyListResponse from '../model/PublicKeyListResponse';
+import PublicKeyRequest from '../model/PublicKeyRequest';
 import PublicKeyResponse from '../model/PublicKeyResponse';
 
 /**
@@ -35,33 +37,32 @@ export default class PublicKeyApi {
 
 
     /**
-     * Callback function to receive the result of the getPublicKey operation.
-     * @callback module:api/PublicKeyApi~getPublicKeyCallback
+     * Callback function to receive the result of the getAllPublicKey operation.
+     * @callback module:api/PublicKeyApi~getAllPublicKeyCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/PublicKeyResponse} data The data returned by the service call.
+     * @param {module:model/PublicKeyListResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get public key
-     * Get public key
-     * @param {String} xApiKey 
-     * @param {module:api/PublicKeyApi~getPublicKeyCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/PublicKeyResponse}
+     * Get All Public Key
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.size 
+     * @param {module:api/PublicKeyApi~getAllPublicKeyCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PublicKeyListResponse}
      */
-    getPublicKey(xApiKey, callback) {
+    getAllPublicKey(opts, callback) {
+      opts = opts || {};
       let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getPublicKey");
-      }
 
       let pathParams = {
       };
       let queryParams = {
+        'page': opts['page'],
+        'size': opts['size']
       };
       let headerParams = {
-        'x-api-key': xApiKey
       };
       let formParams = {
       };
@@ -69,9 +70,54 @@ export default class PublicKeyApi {
       let authNames = ['api_key'];
       let contentTypes = [];
       let accepts = ['application/json'];
-      let returnType = PublicKeyResponse;
+      let returnType = PublicKeyListResponse;
       return this.apiClient.callApi(
         '/public-key', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the rollPublicKeyByGid operation.
+     * @callback module:api/PublicKeyApi~rollPublicKeyByGidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PublicKeyResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Roll Public Key by Gid
+     * @param {String} gid 
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PublicKeyRequest} opts.publicKeyRequest 
+     * @param {module:api/PublicKeyApi~rollPublicKeyByGidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PublicKeyResponse}
+     */
+    rollPublicKeyByGid(gid, opts, callback) {
+      opts = opts || {};
+      let postBody = opts['publicKeyRequest'];
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling rollPublicKeyByGid");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = [];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PublicKeyResponse;
+      return this.apiClient.callApi(
+        '/public-key/{gid}/roll', 'PATCH',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

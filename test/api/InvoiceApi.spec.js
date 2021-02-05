@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayPaymentApi);
+    factory(root.expect, root.SwirepayApi);
   }
-}(this, function(expect, SwirepayPaymentApi) {
+}(this, function(expect, SwirepayApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayPaymentApi.InvoiceApi();
+    instance = new SwirepayApi.InvoiceApi();
   });
 
   var getProperty = function(object, getter, property) {
@@ -48,10 +48,60 @@
   }
 
   describe('InvoiceApi', function() {
-    describe('getInvoice', function() {
-      it('should call getInvoice successfully', function(done) {
-        //uncomment below and update the code to test getInvoice
-        //instance.getInvoice(function(error) {
+    describe('addInvoice', function() {
+      it('should call addInvoice successfully', function(done) {
+        //uncomment below and update the code to test addInvoice
+        //instance.addInvoice(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getAllInvoices', function() {
+      it('should call getAllInvoices successfully', function(done) {
+        //uncomment below and update the code to test getAllInvoices
+        //instance.getAllInvoices(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('getInvoiceByGid', function() {
+      it('should call getInvoiceByGid successfully', function(done) {
+        //uncomment below and update the code to test getInvoiceByGid
+        //instance.getInvoiceByGid(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('payInvoice', function() {
+      it('should call payInvoice successfully', function(done) {
+        //uncomment below and update the code to test payInvoice
+        //instance.payInvoice(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateInvoiceActive', function() {
+      it('should call updateInvoiceActive successfully', function(done) {
+        //uncomment below and update the code to test updateInvoiceActive
+        //instance.updateInvoiceActive(function(error) {
+        //  if (error) throw error;
+        //expect().to.be();
+        //});
+        done();
+      });
+    });
+    describe('updateInvoiceDraft', function() {
+      it('should call updateInvoiceDraft successfully', function(done) {
+        //uncomment below and update the code to test updateInvoiceDraft
+        //instance.updateInvoiceDraft(function(error) {
         //  if (error) throw error;
         //expect().to.be();
         //});

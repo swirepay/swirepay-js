@@ -1,29 +1,37 @@
-# SwirepayPaymentApi.PayoutApi
+# SwirepayApi.PayoutApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getPayout**](PayoutApi.md#getPayout) | **GET** /payout | Get payout
+[**getAllPayouts**](PayoutApi.md#getAllPayouts) | **GET** /payout | Get All payouts
+[**getPayoutByGid**](PayoutApi.md#getPayoutByGid) | **GET** /payout/{gid} | Get payout by Gid
 
 
 
-## getPayout
+## getAllPayouts
 
-> PayoutResponse getPayout(xApiKey)
+> PayoutListResponse getAllPayouts(opts)
 
-Get payout
-
-Get payout
+Get All payouts
 
 ### Example
 
 ```javascript
-import SwirepayPaymentApi from 'swirepay_payment_api';
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayPaymentApi.PayoutApi();
-let xApiKey = "xApiKey_example"; // String | 
-apiInstance.getPayout(xApiKey, (error, data, response) => {
+let apiInstance = new SwirepayApi.PayoutApi();
+let opts = {
+  'page': 56, // Number | 
+  'size': 56 // Number | 
+};
+apiInstance.getAllPayouts(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -37,7 +45,57 @@ apiInstance.getPayout(xApiKey, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiKey** | **String**|  | 
+ **page** | **Number**|  | [optional] 
+ **size** | **Number**|  | [optional] 
+
+### Return type
+
+[**PayoutListResponse**](PayoutListResponse.md)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## getPayoutByGid
+
+> PayoutResponse getPayoutByGid(gid)
+
+Get payout by Gid
+
+### Example
+
+```javascript
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new SwirepayApi.PayoutApi();
+let gid = "gid_example"; // String | 
+apiInstance.getPayoutByGid(gid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gid** | **String**|  | 
 
 ### Return type
 
@@ -45,7 +103,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[api_key](../README.md#api_key)
 
 ### HTTP request headers
 

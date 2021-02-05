@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -22,10 +22,15 @@ class CardRequest {
     /**
      * Constructs a new <code>CardRequest</code>.
      * @alias module:model/CardRequest
+     * @param _number {String} 
+     * @param name {String} 
+     * @param expiryYear {Number} 
+     * @param expiryMonth {Number} 
+     * @param cvv {Number} 
      */
-    constructor() { 
+    constructor(_number, name, expiryYear, expiryMonth, cvv) { 
         
-        CardRequest.initialize(this);
+        CardRequest.initialize(this, _number, name, expiryYear, expiryMonth, cvv);
     }
 
     /**
@@ -33,7 +38,12 @@ class CardRequest {
      * This method is used by the constructors of any subclasses, in order to implement multiple inheritance (mix-ins).
      * Only for internal use.
      */
-    static initialize(obj) { 
+    static initialize(obj, _number, name, expiryYear, expiryMonth, cvv) { 
+        obj['number'] = _number;
+        obj['name'] = name;
+        obj['expiryYear'] = expiryYear;
+        obj['expiryMonth'] = expiryMonth;
+        obj['cvv'] = cvv;
     }
 
     /**
@@ -47,23 +57,20 @@ class CardRequest {
         if (data) {
             obj = obj || new CardRequest();
 
-            if (data.hasOwnProperty('name')) {
-                obj['name'] = ApiClient.convertToType(data['name'], 'String');
-            }
             if (data.hasOwnProperty('number')) {
                 obj['number'] = ApiClient.convertToType(data['number'], 'String');
             }
-            if (data.hasOwnProperty('scheme')) {
-                obj['scheme'] = ApiClient.convertToType(data['scheme'], 'String');
-            }
-            if (data.hasOwnProperty('cvv')) {
-                obj['cvv'] = ApiClient.convertToType(data['cvv'], 'String');
-            }
-            if (data.hasOwnProperty('expiryMonth')) {
-                obj['expiryMonth'] = ApiClient.convertToType(data['expiryMonth'], 'String');
+            if (data.hasOwnProperty('name')) {
+                obj['name'] = ApiClient.convertToType(data['name'], 'String');
             }
             if (data.hasOwnProperty('expiryYear')) {
-                obj['expiryYear'] = ApiClient.convertToType(data['expiryYear'], 'String');
+                obj['expiryYear'] = ApiClient.convertToType(data['expiryYear'], 'Number');
+            }
+            if (data.hasOwnProperty('expiryMonth')) {
+                obj['expiryMonth'] = ApiClient.convertToType(data['expiryMonth'], 'Number');
+            }
+            if (data.hasOwnProperty('cvv')) {
+                obj['cvv'] = ApiClient.convertToType(data['cvv'], 'Number');
             }
         }
         return obj;
@@ -73,34 +80,29 @@ class CardRequest {
 }
 
 /**
- * @member {String} name
- */
-CardRequest.prototype['name'] = undefined;
-
-/**
  * @member {String} number
  */
 CardRequest.prototype['number'] = undefined;
 
 /**
- * @member {String} scheme
+ * @member {String} name
  */
-CardRequest.prototype['scheme'] = undefined;
+CardRequest.prototype['name'] = undefined;
 
 /**
- * @member {String} cvv
+ * @member {Number} expiryYear
  */
-CardRequest.prototype['cvv'] = undefined;
+CardRequest.prototype['expiryYear'] = undefined;
 
 /**
- * @member {String} expiryMonth
+ * @member {Number} expiryMonth
  */
 CardRequest.prototype['expiryMonth'] = undefined;
 
 /**
- * @member {String} expiryYear
+ * @member {Number} cvv
  */
-CardRequest.prototype['expiryYear'] = undefined;
+CardRequest.prototype['cvv'] = undefined;
 
 
 

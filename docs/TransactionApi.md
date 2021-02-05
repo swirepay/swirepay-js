@@ -1,35 +1,36 @@
-# SwirepayPaymentApi.TransactionApi
+# SwirepayApi.TransactionApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getTransaction**](TransactionApi.md#getTransaction) | **GET** /transaction | Get transaction
+[**getAllTransaction**](TransactionApi.md#getAllTransaction) | **GET** /transaction | Get All transactions
 
 
 
-## getTransaction
+## getAllTransaction
 
-> TransactionResponse getTransaction(xApiKey)
+> TransactionListResponse getAllTransaction(opts)
 
-Get transaction
-
-Get transaction
+Get All transactions
 
 ### Example
 
 ```javascript
-import SwirepayPaymentApi from 'swirepay_payment_api';
-let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayPaymentApi.TransactionApi();
-let xApiKey = "xApiKey_example"; // String | 
-apiInstance.getTransaction(xApiKey, (error, data, response) => {
+let apiInstance = new SwirepayApi.TransactionApi();
+let opts = {
+  'page': 56, // Number | 
+  'size': 56 // Number | 
+};
+apiInstance.getAllTransaction(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -43,11 +44,12 @@ apiInstance.getTransaction(xApiKey, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiKey** | **String**|  | 
+ **page** | **Number**|  | [optional] 
+ **size** | **Number**|  | [optional] 
 
 ### Return type
 
-[**TransactionResponse**](TransactionResponse.md)
+[**TransactionListResponse**](TransactionListResponse.md)
 
 ### Authorization
 

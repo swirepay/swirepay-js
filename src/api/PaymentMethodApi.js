@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -44,30 +44,21 @@ export default class PaymentMethodApi {
      */
 
     /**
-     * Add a payment method
-     * Adds a payment method to an account
-     * @param {String} xApiKey 
-     * @param {module:model/PaymentMethodRequest} body Payment method object that needs to be added to the account
+     * Add Payment Method
+     * @param {Object} opts Optional parameters
+     * @param {module:model/PaymentMethodRequest} opts.paymentMethodRequest 
      * @param {module:api/PaymentMethodApi~addPaymentMethodCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentMethodResponse}
      */
-    addPaymentMethod(xApiKey, body, callback) {
-      let postBody = body;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling addPaymentMethod");
-      }
-      // verify the required parameter 'body' is set
-      if (body === undefined || body === null) {
-        throw new Error("Missing the required parameter 'body' when calling addPaymentMethod");
-      }
+    addPaymentMethod(opts, callback) {
+      opts = opts || {};
+      let postBody = opts['paymentMethodRequest'];
 
       let pathParams = {
       };
       let queryParams = {
       };
       let headerParams = {
-        'x-api-key': xApiKey
       };
       let formParams = {
       };
@@ -84,33 +75,73 @@ export default class PaymentMethodApi {
     }
 
     /**
-     * Callback function to receive the result of the getPaymentMethod operation.
-     * @callback module:api/PaymentMethodApi~getPaymentMethodCallback
+     * Callback function to receive the result of the deletePaymentMethod operation.
+     * @callback module:api/PaymentMethodApi~deletePaymentMethodCallback
+     * @param {String} error Error message, if any.
+     * @param data This operation does not return a value.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Delete Payment Method
+     * @param {String} gid 
+     * @param {module:api/PaymentMethodApi~deletePaymentMethodCallback} callback The callback function, accepting three arguments: error, data, response
+     */
+    deletePaymentMethod(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling deletePaymentMethod");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = [];
+      let returnType = null;
+      return this.apiClient.callApi(
+        '/payment-method/{gid}', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getPaymentMethodByGid operation.
+     * @callback module:api/PaymentMethodApi~getPaymentMethodByGidCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentMethodResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get payment methods
-     * Get payment methods
-     * @param {String} xApiKey 
-     * @param {module:api/PaymentMethodApi~getPaymentMethodCallback} callback The callback function, accepting three arguments: error, data, response
+     * Get Payment Method by Gid
+     * @param {String} gid 
+     * @param {module:api/PaymentMethodApi~getPaymentMethodByGidCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentMethodResponse}
      */
-    getPaymentMethod(xApiKey, callback) {
+    getPaymentMethodByGid(gid, callback) {
       let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getPaymentMethod");
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling getPaymentMethodByGid");
       }
 
       let pathParams = {
+        'gid': gid
       };
       let queryParams = {
       };
       let headerParams = {
-        'x-api-key': xApiKey
       };
       let formParams = {
       };
@@ -120,7 +151,7 @@ export default class PaymentMethodApi {
       let accepts = ['application/json'];
       let returnType = PaymentMethodResponse;
       return this.apiClient.callApi(
-        '/payment-method', 'GET',
+        '/payment-method/{gid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

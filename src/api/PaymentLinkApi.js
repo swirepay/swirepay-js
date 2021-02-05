@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -13,6 +13,8 @@
 
 
 import ApiClient from "../ApiClient";
+import PaymentLinkListResponse from '../model/PaymentLinkListResponse';
+import PaymentLinkRequest from '../model/PaymentLinkRequest';
 import PaymentLinkResponse from '../model/PaymentLinkResponse';
 
 /**
@@ -35,25 +37,24 @@ export default class PaymentLinkApi {
 
 
     /**
-     * Callback function to receive the result of the getPaymentLink operation.
-     * @callback module:api/PaymentLinkApi~getPaymentLinkCallback
+     * Callback function to receive the result of the addPaymentLink operation.
+     * @callback module:api/PaymentLinkApi~addPaymentLinkCallback
      * @param {String} error Error message, if any.
      * @param {module:model/PaymentLinkResponse} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * Get payment link
-     * Get payment link
-     * @param {String} xApiKey 
-     * @param {module:api/PaymentLinkApi~getPaymentLinkCallback} callback The callback function, accepting three arguments: error, data, response
+     * Add a new Payment Link
+     * @param {module:model/PaymentLinkRequest} paymentLinkRequest 
+     * @param {module:api/PaymentLinkApi~addPaymentLinkCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/PaymentLinkResponse}
      */
-    getPaymentLink(xApiKey, callback) {
-      let postBody = null;
-      // verify the required parameter 'xApiKey' is set
-      if (xApiKey === undefined || xApiKey === null) {
-        throw new Error("Missing the required parameter 'xApiKey' when calling getPaymentLink");
+    addPaymentLink(paymentLinkRequest, callback) {
+      let postBody = paymentLinkRequest;
+      // verify the required parameter 'paymentLinkRequest' is set
+      if (paymentLinkRequest === undefined || paymentLinkRequest === null) {
+        throw new Error("Missing the required parameter 'paymentLinkRequest' when calling addPaymentLink");
       }
 
       let pathParams = {
@@ -61,7 +62,48 @@ export default class PaymentLinkApi {
       let queryParams = {
       };
       let headerParams = {
-        'x-api-key': xApiKey
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = ['application/json'];
+      let accepts = ['application/json'];
+      let returnType = PaymentLinkResponse;
+      return this.apiClient.callApi(
+        '/payment-link', 'POST',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the cancelPaymentLinkByGid operation.
+     * @callback module:api/PaymentLinkApi~cancelPaymentLinkByGidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentLinkResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Payment Link by Gid
+     * @param {String} gid 
+     * @param {module:api/PaymentLinkApi~cancelPaymentLinkByGidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentLinkResponse}
+     */
+    cancelPaymentLinkByGid(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling cancelPaymentLinkByGid");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
       };
       let formParams = {
       };
@@ -71,7 +113,91 @@ export default class PaymentLinkApi {
       let accepts = ['application/json'];
       let returnType = PaymentLinkResponse;
       return this.apiClient.callApi(
+        '/payment-link/{gid}/cancel', 'PATCH',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getAllPaymentLink operation.
+     * @callback module:api/PaymentLinkApi~getAllPaymentLinkCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentLinkListResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get All payment Link
+     * @param {Object} opts Optional parameters
+     * @param {Number} opts.page 
+     * @param {Number} opts.size 
+     * @param {module:api/PaymentLinkApi~getAllPaymentLinkCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentLinkListResponse}
+     */
+    getAllPaymentLink(opts, callback) {
+      opts = opts || {};
+      let postBody = null;
+
+      let pathParams = {
+      };
+      let queryParams = {
+        'page': opts['page'],
+        'size': opts['size']
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentLinkListResponse;
+      return this.apiClient.callApi(
         '/payment-link', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, null, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getPaymentLinkByGid operation.
+     * @callback module:api/PaymentLinkApi~getPaymentLinkByGidCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/PaymentLinkResponse} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * Get Payment Link by Gid
+     * @param {String} gid 
+     * @param {module:api/PaymentLinkApi~getPaymentLinkByGidCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/PaymentLinkResponse}
+     */
+    getPaymentLinkByGid(gid, callback) {
+      let postBody = null;
+      // verify the required parameter 'gid' is set
+      if (gid === undefined || gid === null) {
+        throw new Error("Missing the required parameter 'gid' when calling getPaymentLinkByGid");
+      }
+
+      let pathParams = {
+        'gid': gid
+      };
+      let queryParams = {
+      };
+      let headerParams = {
+      };
+      let formParams = {
+      };
+
+      let authNames = ['api_key'];
+      let contentTypes = [];
+      let accepts = ['application/json'];
+      let returnType = PaymentLinkResponse;
+      return this.apiClient.callApi(
+        '/payment-link/{gid}', 'GET',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, null, callback
       );

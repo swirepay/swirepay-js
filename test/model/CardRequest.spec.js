@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -20,15 +20,15 @@
     factory(require('expect.js'), require(process.cwd()+'/src/index'));
   } else {
     // Browser globals (root is window)
-    factory(root.expect, root.SwirepayPaymentApi);
+    factory(root.expect, root.SwirepayApi);
   }
-}(this, function(expect, SwirepayPaymentApi) {
+}(this, function(expect, SwirepayApi) {
   'use strict';
 
   var instance;
 
   beforeEach(function() {
-    instance = new SwirepayPaymentApi.CardRequest();
+    instance = new SwirepayApi.CardRequest();
   });
 
   var getProperty = function(object, getter, property) {
@@ -50,43 +50,37 @@
   describe('CardRequest', function() {
     it('should create an instance of CardRequest', function() {
       // uncomment below and update the code to test CardRequest
-      //var instane = new SwirepayPaymentApi.CardRequest();
-      //expect(instance).to.be.a(SwirepayPaymentApi.CardRequest);
-    });
-
-    it('should have the property name (base name: "name")', function() {
-      // uncomment below and update the code to test the property name
-      //var instance = new SwirepayPaymentApi.CardRequest();
-      //expect(instance).to.be();
+      //var instane = new SwirepayApi.CardRequest();
+      //expect(instance).to.be.a(SwirepayApi.CardRequest);
     });
 
     it('should have the property _number (base name: "number")', function() {
       // uncomment below and update the code to test the property _number
-      //var instance = new SwirepayPaymentApi.CardRequest();
+      //var instance = new SwirepayApi.CardRequest();
       //expect(instance).to.be();
     });
 
-    it('should have the property scheme (base name: "scheme")', function() {
-      // uncomment below and update the code to test the property scheme
-      //var instance = new SwirepayPaymentApi.CardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property cvv (base name: "cvv")', function() {
-      // uncomment below and update the code to test the property cvv
-      //var instance = new SwirepayPaymentApi.CardRequest();
-      //expect(instance).to.be();
-    });
-
-    it('should have the property expiryMonth (base name: "expiryMonth")', function() {
-      // uncomment below and update the code to test the property expiryMonth
-      //var instance = new SwirepayPaymentApi.CardRequest();
+    it('should have the property name (base name: "name")', function() {
+      // uncomment below and update the code to test the property name
+      //var instance = new SwirepayApi.CardRequest();
       //expect(instance).to.be();
     });
 
     it('should have the property expiryYear (base name: "expiryYear")', function() {
       // uncomment below and update the code to test the property expiryYear
-      //var instance = new SwirepayPaymentApi.CardRequest();
+      //var instance = new SwirepayApi.CardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property expiryMonth (base name: "expiryMonth")', function() {
+      // uncomment below and update the code to test the property expiryMonth
+      //var instance = new SwirepayApi.CardRequest();
+      //expect(instance).to.be();
+    });
+
+    it('should have the property cvv (base name: "cvv")', function() {
+      // uncomment below and update the code to test the property cvv
+      //var instance = new SwirepayApi.CardRequest();
       //expect(instance).to.be();
     });
 

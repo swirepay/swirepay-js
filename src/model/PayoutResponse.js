@@ -1,5 +1,5 @@
 /**
- * Swirepay Payment API
+ * Swirepay API
  * Swirepay REST APIs' are resource-oriented URLs that accept JSON-encoded request bodies, return JSON-encoded responses, and use standard HTTP response codes, authentication, and verbs. You can use the Swirepay API in test mode, which does not affect your live data or interact with the banking networks. The `API key` you use to authenticate the request determines whether the request is live mode or test mode.
  *
  * The version of the OpenAPI document: 1.0.0
@@ -12,7 +12,7 @@
  */
 
 import ApiClient from '../ApiClient';
-import CategoryResponseEntity from './CategoryResponseEntity';
+import Payout from './Payout';
 
 /**
  * The PayoutResponse model module.
@@ -51,14 +51,14 @@ class PayoutResponse {
             if (data.hasOwnProperty('message')) {
                 obj['message'] = ApiClient.convertToType(data['message'], 'String');
             }
-            if (data.hasOwnProperty('entity')) {
-                obj['entity'] = CategoryResponseEntity.constructFromObject(data['entity']);
-            }
             if (data.hasOwnProperty('responseCode')) {
                 obj['responseCode'] = ApiClient.convertToType(data['responseCode'], 'Number');
             }
             if (data.hasOwnProperty('status')) {
                 obj['status'] = ApiClient.convertToType(data['status'], 'String');
+            }
+            if (data.hasOwnProperty('entity')) {
+                obj['entity'] = Payout.constructFromObject(data['entity']);
             }
         }
         return obj;
@@ -73,11 +73,6 @@ class PayoutResponse {
 PayoutResponse.prototype['message'] = undefined;
 
 /**
- * @member {module:model/CategoryResponseEntity} entity
- */
-PayoutResponse.prototype['entity'] = undefined;
-
-/**
  * @member {Number} responseCode
  */
 PayoutResponse.prototype['responseCode'] = undefined;
@@ -87,6 +82,11 @@ PayoutResponse.prototype['responseCode'] = undefined;
  * @member {module:model/PayoutResponse.StatusEnum} status
  */
 PayoutResponse.prototype['status'] = undefined;
+
+/**
+ * @member {module:model/Payout} entity
+ */
+PayoutResponse.prototype['entity'] = undefined;
 
 
 

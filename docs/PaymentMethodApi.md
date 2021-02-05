@@ -1,37 +1,37 @@
-# SwirepayPaymentApi.PaymentMethodApi
+# SwirepayApi.PaymentMethodApi
 
 All URIs are relative to *https://api.swirepay.com/v1*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**addPaymentMethod**](PaymentMethodApi.md#addPaymentMethod) | **POST** /payment-method | Add a payment method
-[**getPaymentMethod**](PaymentMethodApi.md#getPaymentMethod) | **GET** /payment-method | Get payment methods
+[**addPaymentMethod**](PaymentMethodApi.md#addPaymentMethod) | **POST** /payment-method | Add Payment Method
+[**deletePaymentMethod**](PaymentMethodApi.md#deletePaymentMethod) | **DELETE** /payment-method/{gid} | Delete Payment Method
+[**getPaymentMethodByGid**](PaymentMethodApi.md#getPaymentMethodByGid) | **GET** /payment-method/{gid} | Get Payment Method by Gid
 
 
 
 ## addPaymentMethod
 
-> PaymentMethodResponse addPaymentMethod(xApiKey, body)
+> PaymentMethodResponse addPaymentMethod(opts)
 
-Add a payment method
-
-Adds a payment method to an account
+Add Payment Method
 
 ### Example
 
 ```javascript
-import SwirepayPaymentApi from 'swirepay_payment_api';
-let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayPaymentApi.PaymentMethodApi();
-let xApiKey = "xApiKey_example"; // String | 
-let body = new SwirepayPaymentApi.PaymentMethodRequest(); // PaymentMethodRequest | Payment method object that needs to be added to the account
-apiInstance.addPaymentMethod(xApiKey, body, (error, data, response) => {
+let apiInstance = new SwirepayApi.PaymentMethodApi();
+let opts = {
+  'paymentMethodRequest': new SwirepayApi.PaymentMethodRequest() // PaymentMethodRequest | 
+};
+apiInstance.addPaymentMethod(opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -45,8 +45,7 @@ apiInstance.addPaymentMethod(xApiKey, body, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiKey** | **String**|  | 
- **body** | [**PaymentMethodRequest**](PaymentMethodRequest.md)| Payment method object that needs to be added to the account | 
+ **paymentMethodRequest** | [**PaymentMethodRequest**](PaymentMethodRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -62,28 +61,75 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## getPaymentMethod
+## deletePaymentMethod
 
-> PaymentMethodResponse getPaymentMethod(xApiKey)
+> deletePaymentMethod(gid)
 
-Get payment methods
-
-Get payment methods
+Delete Payment Method
 
 ### Example
 
 ```javascript
-import SwirepayPaymentApi from 'swirepay_payment_api';
-let defaultClient = SwirepayPaymentApi.ApiClient.instance;
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
 // Configure API key authorization: api_key
 let api_key = defaultClient.authentications['api_key'];
 api_key.apiKey = 'YOUR API KEY';
 // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
 //api_key.apiKeyPrefix = 'Token';
 
-let apiInstance = new SwirepayPaymentApi.PaymentMethodApi();
-let xApiKey = "xApiKey_example"; // String | 
-apiInstance.getPaymentMethod(xApiKey, (error, data, response) => {
+let apiInstance = new SwirepayApi.PaymentMethodApi();
+let gid = "gid_example"; // String | 
+apiInstance.deletePaymentMethod(gid, (error, data, response) => {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully.');
+  }
+});
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **gid** | **String**|  | 
+
+### Return type
+
+null (empty response body)
+
+### Authorization
+
+[api_key](../README.md#api_key)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+
+## getPaymentMethodByGid
+
+> PaymentMethodResponse getPaymentMethodByGid(gid)
+
+Get Payment Method by Gid
+
+### Example
+
+```javascript
+import SwirepayApi from 'swirepay_api';
+let defaultClient = SwirepayApi.ApiClient.instance;
+// Configure API key authorization: api_key
+let api_key = defaultClient.authentications['api_key'];
+api_key.apiKey = 'YOUR API KEY';
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//api_key.apiKeyPrefix = 'Token';
+
+let apiInstance = new SwirepayApi.PaymentMethodApi();
+let gid = "gid_example"; // String | 
+apiInstance.getPaymentMethodByGid(gid, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -97,7 +143,7 @@ apiInstance.getPaymentMethod(xApiKey, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xApiKey** | **String**|  | 
+ **gid** | **String**|  | 
 
 ### Return type
 
