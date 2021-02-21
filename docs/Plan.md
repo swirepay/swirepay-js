@@ -12,22 +12,7 @@ Name | Type | Description | Notes
 **amount** | **Number** |  | [optional] 
 **description** | **String** |  | [optional] 
 **note** | **String** |  | [optional] 
-**billingFrequency** | **String** |  | [optional] 
+**billingFrequency** | [**BillingFrequency**](BillingFrequency.md) |  | [optional] 
 **billingPeriod** | **Number** |  | [optional] 
-
-
-
-## Enum: BillingFrequencyEnum
-
-
-* `DAY` (value: `"DAY"`)
-
-* `MONTH` (value: `"MONTH"`)
-
-* `WEEK` (value: `"WEEK"`)
-
-* `YEAR` (value: `"YEAR"`)
-
-
 
 

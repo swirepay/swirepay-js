@@ -60,6 +60,11 @@ docs/PayoutListResponse.md
 docs/PayoutListResponseEntity.md
 docs/PayoutResponse.md
 docs/Plan.md
+docs/PlanApi.md
+docs/PlanListResponse.md
+docs/PlanListResponseEntity.md
+docs/PlanRequest.md
+docs/PlanResponse.md
 docs/PublicKey.md
 docs/PublicKeyApi.md
 docs/PublicKeyListResponse.md
@@ -114,6 +119,7 @@ src/api/PaymentLinkApi.js
 src/api/PaymentMethodApi.js
 src/api/PaymentSessionApi.js
 src/api/PayoutApi.js
+src/api/PlanApi.js
 src/api/PublicKeyApi.js
 src/api/RefundApi.js
 src/api/SecretKeyApi.js
@@ -171,6 +177,10 @@ src/model/PayoutListResponse.js
 src/model/PayoutListResponseEntity.js
 src/model/PayoutResponse.js
 src/model/Plan.js
+src/model/PlanListResponse.js
+src/model/PlanListResponseEntity.js
+src/model/PlanRequest.js
+src/model/PlanResponse.js
 src/model/PublicKey.js
 src/model/PublicKeyListResponse.js
 src/model/PublicKeyListResponseEntity.js
@@ -215,6 +225,7 @@ test/api/PaymentLinkApi.spec.js
 test/api/PaymentMethodApi.spec.js
 test/api/PaymentSessionApi.spec.js
 test/api/PayoutApi.spec.js
+test/api/PlanApi.spec.js
 test/api/PublicKeyApi.spec.js
 test/api/RefundApi.spec.js
 test/api/SecretKeyApi.spec.js
@@ -271,6 +282,10 @@ test/model/PayoutListResponse.spec.js
 test/model/PayoutListResponseEntity.spec.js
 test/model/PayoutResponse.spec.js
 test/model/Plan.spec.js
+test/model/PlanListResponse.spec.js
+test/model/PlanListResponseEntity.spec.js
+test/model/PlanRequest.spec.js
+test/model/PlanResponse.spec.js
 test/model/PublicKey.spec.js
 test/model/PublicKeyListResponse.spec.js
 test/model/PublicKeyListResponseEntity.spec.js

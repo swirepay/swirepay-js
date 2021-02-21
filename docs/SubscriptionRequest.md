@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**planQuantity** | **Number** |  | 
 **currencyCode** | **String** |  | 
 **customerGid** | **String** |  | 
 **planGid** | **String** |  | 
-**planTotalPayments** | **String** |  | 
+**planTotalPayments** | **Number** |  | 
 **planStartDate** | **String** |  | 
 **planEndDate** | **String** |  | [optional] 
 **planAmount** | **Number** |  | 
