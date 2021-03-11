@@ -1,8 +1,8 @@
 {
   "name": "swirepay-js",
-  "version": "1.0.1",
-  "description": "Swirepay_REST_APIs_are_resource_oriented_URLs_that_accept_JSON_encodedrequest_bodies_return_JSON_encoded_responses_and_use_standard_HTTP_responsecodes_authentication_and_verbs__You_can_use_the_Swirepay_API_in_test_mode_whichdoes_not_affect_your_live_data_or_interact_with_the_banking_networks__The_APIkey_you_use_to_authenticate_the_request_determines_whether_the_request_is_livemode_or_test_mode_",
-  "license": "Apache 2.0",
+  "version": "1.0.0",
+  "description": "Swirepay_REST_APIs_are_resource_oriented_URLs_that_accept_JSON_encoded_request_bodies_return_JSON_encoded_responses_and_use_standard_HTTP_response_codes_authentication_and_verbs__You_can_use_the_Swirepay_API_in_test_mode_which_does_not_affect_your_live_data_or_interact_with_the_banking_networks__The_API_key_you_use_to_authenticate_the_request_determines_whether_the_request_is_live_mode_or_test_mode_",
+  "license": "Android SDK",
   "main": "dist/index.js",
   "scripts": {
     "build": "babel src -d dist",

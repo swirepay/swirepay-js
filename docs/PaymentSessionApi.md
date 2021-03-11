@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## addPaymentSession
 
-> PaymentSessionResponse addPaymentSession(paymentSessionRequest)
+> PaymentSessionResponse addPaymentSession(paymentSessionRequest, opts)
 
 Add a new payment ssession
 
@@ -35,7 +35,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let paymentSessionRequest = new SwirepayApi.PaymentSessionRequest(); // PaymentSessionRequest | 
-apiInstance.addPaymentSession(paymentSessionRequest, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.addPaymentSession(paymentSessionRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -50,6 +53,7 @@ apiInstance.addPaymentSession(paymentSessionRequest, (error, data, response) => 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **paymentSessionRequest** | [**PaymentSessionRequest**](PaymentSessionRequest.md)|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -67,7 +71,7 @@ Name | Type | Description  | Notes
 
 ## cancelPaymentSession
 
-> PaymentSessionResponse cancelPaymentSession(gid)
+> PaymentSessionResponse cancelPaymentSession(gid, opts)
 
 Cancel Payment Session
 
@@ -84,7 +88,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
-apiInstance.cancelPaymentSession(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.cancelPaymentSession(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -99,6 +106,7 @@ apiInstance.cancelPaymentSession(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -116,7 +124,7 @@ Name | Type | Description  | Notes
 
 ## capturePaymentSession
 
-> PaymentSessionResponse capturePaymentSession(gid)
+> PaymentSessionResponse capturePaymentSession(gid, opts)
 
 Capture Payment Session
 
@@ -133,7 +141,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
-apiInstance.capturePaymentSession(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.capturePaymentSession(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -148,6 +159,7 @@ apiInstance.capturePaymentSession(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -183,6 +195,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'paymentSessionRequest': new SwirepayApi.PaymentSessionRequest() // PaymentSessionRequest | 
 };
 apiInstance.confirmPaymentSession(gid, opts, (error, data, response) => {
@@ -200,6 +213,7 @@ apiInstance.confirmPaymentSession(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **paymentSessionRequest** | [**PaymentSessionRequest**](PaymentSessionRequest.md)|  | [optional] 
 
 ### Return type
@@ -238,7 +252,8 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let opts = {
   'page': 56, // Number | 
-  'size': 56 // Number | 
+  'size': 56, // Number | 
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
 };
 apiInstance.getAllPaymentSession(opts, (error, data, response) => {
   if (error) {
@@ -256,6 +271,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**|  | [optional] 
  **size** | **Number**|  | [optional] 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -273,7 +289,7 @@ Name | Type | Description  | Notes
 
 ## getPaymentSessionByGid
 
-> PaymentSessionResponse getPaymentSessionByGid(gid)
+> PaymentSessionResponse getPaymentSessionByGid(gid, opts)
 
 Get Payment Session by Gid
 
@@ -290,7 +306,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
-apiInstance.getPaymentSessionByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.getPaymentSessionByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -305,6 +324,7 @@ apiInstance.getPaymentSessionByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -389,6 +409,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'paymentSessionRequest': new SwirepayApi.PaymentSessionRequest() // PaymentSessionRequest | 
 };
 apiInstance.refundPaymentSession(gid, opts, (error, data, response) => {
@@ -406,6 +427,7 @@ apiInstance.refundPaymentSession(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **paymentSessionRequest** | [**PaymentSessionRequest**](PaymentSessionRequest.md)|  | [optional] 
 
 ### Return type
@@ -442,6 +464,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PaymentSessionApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'paymentSessionRequest': new SwirepayApi.PaymentSessionRequest() // PaymentSessionRequest | 
 };
 apiInstance.updatePaymentSession(gid, opts, (error, data, response) => {
@@ -459,6 +482,7 @@ apiInstance.updatePaymentSession(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **paymentSessionRequest** | [**PaymentSessionRequest**](PaymentSessionRequest.md)|  | [optional] 
 
 ### Return type

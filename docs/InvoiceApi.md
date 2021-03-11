@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## addInvoice
 
-> InvoiceResponse addInvoice(invoiceRequest)
+> InvoiceResponse addInvoice(invoiceRequest, opts)
 
 Add a new invoice
 
@@ -32,7 +32,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.InvoiceApi();
 let invoiceRequest = new SwirepayApi.InvoiceRequest(); // InvoiceRequest | 
-apiInstance.addInvoice(invoiceRequest, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.addInvoice(invoiceRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -47,6 +50,7 @@ apiInstance.addInvoice(invoiceRequest, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **invoiceRequest** | [**InvoiceRequest**](InvoiceRequest.md)|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -184,6 +188,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.InvoiceApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'invoiceRequest': new SwirepayApi.InvoiceRequest() // InvoiceRequest | 
 };
 apiInstance.payInvoice(gid, opts, (error, data, response) => {
@@ -201,6 +206,7 @@ apiInstance.payInvoice(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **invoiceRequest** | [**InvoiceRequest**](InvoiceRequest.md)|  | [optional] 
 
 ### Return type
@@ -237,6 +243,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.InvoiceApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'invoiceRequest': new SwirepayApi.InvoiceRequest() // InvoiceRequest | 
 };
 apiInstance.updateInvoiceActive(gid, opts, (error, data, response) => {
@@ -254,6 +261,7 @@ apiInstance.updateInvoiceActive(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **invoiceRequest** | [**InvoiceRequest**](InvoiceRequest.md)|  | [optional] 
 
 ### Return type
@@ -290,6 +298,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.InvoiceApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'invoiceRequest': new SwirepayApi.InvoiceRequest() // InvoiceRequest | 
 };
 apiInstance.updateInvoiceDraft(gid, opts, (error, data, response) => {
@@ -307,6 +316,7 @@ apiInstance.updateInvoiceDraft(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **invoiceRequest** | [**InvoiceRequest**](InvoiceRequest.md)|  | [optional] 
 
 ### Return type

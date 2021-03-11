@@ -29,6 +29,7 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentMethodApi();
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'paymentMethodRequest': new SwirepayApi.PaymentMethodRequest() // PaymentMethodRequest | 
 };
 apiInstance.addPaymentMethod(opts, (error, data, response) => {
@@ -45,6 +46,7 @@ apiInstance.addPaymentMethod(opts, (error, data, response) => {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **paymentMethodRequest** | [**PaymentMethodRequest**](PaymentMethodRequest.md)|  | [optional] 
 
 ### Return type
@@ -63,7 +65,7 @@ Name | Type | Description  | Notes
 
 ## deletePaymentMethod
 
-> deletePaymentMethod(gid)
+> deletePaymentMethod(gid, opts)
 
 Delete Payment Method
 
@@ -80,7 +82,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentMethodApi();
 let gid = "gid_example"; // String | 
-apiInstance.deletePaymentMethod(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.deletePaymentMethod(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -95,6 +100,7 @@ apiInstance.deletePaymentMethod(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -112,7 +118,7 @@ null (empty response body)
 
 ## getPaymentMethodByGid
 
-> PaymentMethodResponse getPaymentMethodByGid(gid)
+> PaymentMethodResponse getPaymentMethodByGid(gid, opts)
 
 Get Payment Method by Gid
 
@@ -129,7 +135,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PaymentMethodApi();
 let gid = "gid_example"; // String | 
-apiInstance.getPaymentMethodByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.getPaymentMethodByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -144,6 +153,7 @@ apiInstance.getPaymentMethodByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 

@@ -80,6 +80,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.SubscriptionApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'subscriptionRequest': new SwirepayApi.SubscriptionRequest() // SubscriptionRequest | 
 };
 apiInstance.cancelSubscription(gid, opts, (error, data, response) => {
@@ -97,6 +98,7 @@ apiInstance.cancelSubscription(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **subscriptionRequest** | [**SubscriptionRequest**](SubscriptionRequest.md)|  | [optional] 
 
 ### Return type
@@ -133,7 +135,8 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.SubscriptionApi();
 let opts = {
   'page': 56, // Number | 
-  'size': 56 // Number | 
+  'size': 56, // Number | 
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
 };
 apiInstance.getAllSubscription(opts, (error, data, response) => {
   if (error) {
@@ -151,6 +154,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**|  | [optional] 
  **size** | **Number**|  | [optional] 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -168,7 +172,7 @@ Name | Type | Description  | Notes
 
 ## getSubscriptionByGid
 
-> SubscriptionResponse getSubscriptionByGid(gid)
+> SubscriptionListResponse getSubscriptionByGid(gid, opts)
 
 Get Subscription by Gid
 
@@ -185,7 +189,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.SubscriptionApi();
 let gid = "gid_example"; // String | 
-apiInstance.getSubscriptionByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.getSubscriptionByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -200,10 +207,11 @@ apiInstance.getSubscriptionByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
-[**SubscriptionResponse**](SubscriptionResponse.md)
+[**SubscriptionListResponse**](SubscriptionListResponse.md)
 
 ### Authorization
 

@@ -80,7 +80,8 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PlanApi();
 let opts = {
   'page': 56, // Number | 
-  'size': 56 // Number | 
+  'size': 56, // Number | 
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
 };
 apiInstance.getAllPlan(opts, (error, data, response) => {
   if (error) {
@@ -98,6 +99,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**|  | [optional] 
  **size** | **Number**|  | [optional] 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -115,7 +117,7 @@ Name | Type | Description  | Notes
 
 ## getplanByGid
 
-> PlanResponse getplanByGid(gid)
+> PlanResponse getplanByGid(gid, opts)
 
 Get Plan by Gid
 
@@ -132,7 +134,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.PlanApi();
 let gid = "gid_example"; // String | 
-apiInstance.getplanByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.getplanByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -147,6 +152,7 @@ apiInstance.getplanByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -182,6 +188,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.PlanApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'planRequest': new SwirepayApi.PlanRequest() // PlanRequest | 
 };
 apiInstance.updatePlan(gid, opts, (error, data, response) => {
@@ -199,6 +206,7 @@ apiInstance.updatePlan(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **planRequest** | [**PlanRequest**](PlanRequest.md)|  | [optional] 
 
 ### Return type

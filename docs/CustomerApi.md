@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## addCustomer
 
-> CustomerResponse addCustomer(customerRequest)
+> CustomerResponse addCustomer(customerRequest, opts)
 
 Add a new customer
 
@@ -31,7 +31,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.CustomerApi();
 let customerRequest = new SwirepayApi.CustomerRequest(); // CustomerRequest | 
-apiInstance.addCustomer(customerRequest, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.addCustomer(customerRequest, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -46,6 +49,7 @@ apiInstance.addCustomer(customerRequest, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **customerRequest** | [**CustomerRequest**](CustomerRequest.md)|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -63,7 +67,7 @@ Name | Type | Description  | Notes
 
 ## deleteCustomerByGid
 
-> deleteCustomerByGid(gid)
+> deleteCustomerByGid(gid, opts)
 
 Delete customer by Gid
 
@@ -80,7 +84,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.CustomerApi();
 let gid = "gid_example"; // String | 
-apiInstance.deleteCustomerByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.deleteCustomerByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -95,6 +102,7 @@ apiInstance.deleteCustomerByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -132,7 +140,8 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.CustomerApi();
 let opts = {
   'page': 56, // Number | 
-  'size': 56 // Number | 
+  'size': 56, // Number | 
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
 };
 apiInstance.getAllCustomers(opts, (error, data, response) => {
   if (error) {
@@ -150,6 +159,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **page** | **Number**|  | [optional] 
  **size** | **Number**|  | [optional] 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -167,7 +177,7 @@ Name | Type | Description  | Notes
 
 ## getCustomerByGid
 
-> CustomerResponse getCustomerByGid(gid)
+> CustomerResponse getCustomerByGid(gid, opts)
 
 Get Customer by Gid
 
@@ -184,7 +194,10 @@ api_key.apiKey = 'YOUR API KEY';
 
 let apiInstance = new SwirepayApi.CustomerApi();
 let gid = "gid_example"; // String | 
-apiInstance.getCustomerByGid(gid, (error, data, response) => {
+let opts = {
+  'destinationAccount': "destinationAccount_example" // String | If processing on behalf of another Swirepay affiliate account
+};
+apiInstance.getCustomerByGid(gid, opts, (error, data, response) => {
   if (error) {
     console.error(error);
   } else {
@@ -199,6 +212,7 @@ apiInstance.getCustomerByGid(gid, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
 
 ### Return type
 
@@ -234,6 +248,7 @@ api_key.apiKey = 'YOUR API KEY';
 let apiInstance = new SwirepayApi.CustomerApi();
 let gid = "gid_example"; // String | 
 let opts = {
+  'destinationAccount': "destinationAccount_example", // String | If processing on behalf of another Swirepay affiliate account
   'customerRequest': new SwirepayApi.CustomerRequest() // CustomerRequest | 
 };
 apiInstance.updateCustomer(gid, opts, (error, data, response) => {
@@ -251,6 +266,7 @@ apiInstance.updateCustomer(gid, opts, (error, data, response) => {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **gid** | **String**|  | 
+ **destinationAccount** | **String**| If processing on behalf of another Swirepay affiliate account | [optional] 
  **customerRequest** | [**CustomerRequest**](CustomerRequest.md)|  | [optional] 
 
 ### Return type
